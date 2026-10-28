@@ -1,0 +1,95 @@
+{
+ "slug": "conversion-tracking-google-ads-meta-ads",
+ "title": "Conversion Tracking: How to Know Which Ads Bring Enquiries",
+ "desc": "Conversion tracking shows which ads and keywords lead to enquiries, not just clicks. Learn what to track and how to check that it works.",
+ "kw": "conversion tracking",
+ "mins": 5,
+ "service": "google-ads-management",
+ "answer": "Conversion tracking records the actions that matter to your business, such as form submissions or WhatsApp clicks, and links them to the ad that brought the visitor. Without it you only see clicks and cannot tell which campaigns bring real enquiries.",
+ "body": [
+  [
+   "h2",
+   "What is a conversion?"
+  ],
+  [
+   "p",
+   "A conversion is an action you want a visitor to take. For a service business it is usually a form submission, a WhatsApp click or a phone call. For an online shop it is a purchase."
+  ],
+  [
+   "h2",
+   "What to track for most small businesses"
+  ],
+  [
+   "ul",
+   [
+    "Contact form submissions.",
+    "Clicks on WhatsApp buttons.",
+    "Phone number clicks, if you show one.",
+    "Purchases or add-to-cart actions for online shops."
+   ]
+  ],
+  [
+   "h2",
+   "The tools involved"
+  ],
+  [
+   "ul",
+   [
+    "Google Ads conversion tracking, with the Google tag, for Google campaigns.",
+    "Google Analytics 4 to see how visitors move through your site.",
+    "Meta Pixel, and where possible the Conversions API, for Facebook and Instagram campaigns."
+   ]
+  ],
+  [
+   "h2",
+   "How to check it works"
+  ],
+  [
+   "p",
+   "Test every action yourself. Submit the form, click the WhatsApp button, then confirm the event appears in the platform. Google Tag Assistant and the Meta Pixel Helper browser extension help with this. Platform steps change, so check the current official guides when you set it up."
+  ],
+  [
+   "h2",
+   "Common mistakes"
+  ],
+  [
+   "ul",
+   [
+    "Counting page views as conversions.",
+    "Tracking the same enquiry twice.",
+    "Never testing after a website update.",
+    "Not telling the platform which action is the real goal."
+   ]
+  ],
+  [
+   "h2",
+   "Privacy note"
+  ],
+  [
+   "p",
+   "Tell visitors what you track in a privacy page, and follow each platform's rules for personal data."
+  ]
+ ],
+ "faq": [
+  [
+   "Why does conversion tracking matter?",
+   "It shows which keywords, ads and audiences bring enquiries, so you can spend more on what works and stop what does not."
+  ],
+  [
+   "Can I track WhatsApp clicks?",
+   "Yes. A click on a WhatsApp button can be recorded as an event. It shows interest, though not whether the chat became a sale."
+  ],
+  [
+   "Do I need Google Analytics?",
+   "It is not required for ads to run, but it helps you understand visitor behaviour beyond the ad platform."
+  ]
+ ],
+ "related": [
+  "google-ads-vs-meta-ads-pakistan",
+  "website-checklist-before-running-ads"
+ ],
+ "extra_service": "meta-ads-management",
+ "date": "2026-10-26",
+ "draft": false,
+ "updated": "2026-10-28"
+}

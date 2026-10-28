@@ -1,0 +1,53 @@
+[
+ {
+  "id": "bluetick-media",
+  "name": "BlueTick Media",
+  "brand": "BlueTick Media",
+  "industry": "Digital marketing agency · Dubai, UAE",
+  "status": "live",
+  "services": [
+   "Website Development",
+   "Landing Page"
+  ],
+  "overview": "A multi-page website for a Dubai-based Google Ads agency. Everything is built around one action, requesting a free marketing audit, with a lead form, a services page, a privacy policy, WhatsApp contact and an on-site chat assistant.",
+  "outcome": "",
+  "url": "https://ansar2474.github.io/bluetickmedia/",
+  "image": "assets/bluetick-home.jpg",
+  "logoHtml": "<svg viewBox=\"0 0 32 32\" aria-hidden=\"true\"><rect width=\"32\" height=\"32\" rx=\"7\" fill=\"#0a1f5c\"/><path d=\"M8 17l5 5 11-12\" fill=\"none\" stroke=\"#22d3ee\" stroke-width=\"3.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+  "imageAlt": "Mobile screenshot of the BlueTick Media website home page",
+  "summary": "Multi-page website for a Dubai-based Google Ads agency, built around a free marketing audit request."
+ },
+ {
+  "id": "iserve",
+  "name": "IServe",
+  "brand": "IServe Home Services",
+  "industry": "Home services · Lahore, Karachi, Islamabad",
+  "status": "live",
+  "services": [
+   "Website Development",
+   "Booking form",
+   "Service pages"
+  ],
+  "overview": "A website for a managed home-services team covering AC repair, plumbing, electrical work and cleaning. Visitors choose a city and service, see indicative PKR prices, and book by form or WhatsApp. Each service and city has its own page.",
+  "outcome": "",
+  "url": "https://ansar2474.github.io/IServe/",
+  "image": "assets/iserve-home.jpg",
+  "logoHtml": "<img src=\"https://ansar2474.github.io/IServe/assets/img/logo.webp\" alt=\"\" loading=\"lazy\" decoding=\"async\" onerror=\"this.outerHTML='<b>IServe</b>'\">",
+  "imageAlt": "Mobile screenshot of the IServe website home page",
+  "summary": "Website for a managed home-services team offering AC repair, plumbing, electrical work and cleaning in Pakistan."
+ },
+ {
+  "id": "furniture-website",
+  "name": "Furniture business website",
+  "brand": "",
+  "industry": "Furniture",
+  "status": "wip",
+  "services": [
+   "Website Development"
+  ],
+  "overview": "A website for a furniture business. It is being built now, and screenshots and details will be added here at launch.",
+  "outcome": "",
+  "url": "",
+  "image": ""
+ }
+]

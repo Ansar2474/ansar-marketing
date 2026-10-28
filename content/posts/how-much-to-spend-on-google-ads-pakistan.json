@@ -1,0 +1,86 @@
+{
+ "slug": "how-much-to-spend-on-google-ads-pakistan",
+ "title": "How Much Should a Small Business Spend on Google Ads?",
+ "desc": "There is no fixed Google Ads budget. Learn a simple way to set a sensible starting budget from what one customer is worth to your business.",
+ "kw": "Google Ads budget",
+ "mins": 5,
+ "service": "google-ads-management",
+ "answer": "There is no standard Google Ads budget that suits every business. A sensible way to start is to work out what one customer is worth, decide how many months you can afford to test, and set a budget you can keep up for that whole period. Then measure the cost of each enquiry and adjust.",
+ "body": [
+  [
+   "h2",
+   "Start with what one customer is worth"
+  ],
+  [
+   "p",
+   "Before choosing a budget, find your average profit from one new customer. If a customer brings you PKR 20,000 in profit, you cannot spend more than that to win one, and you should spend much less."
+  ],
+  [
+   "h2",
+   "A simple example"
+  ],
+  [
+   "p",
+   "This is an example only, not a benchmark. Suppose one new customer gives you PKR 20,000 in profit, and you close about 1 in 5 enquiries. Then each enquiry is worth around PKR 4,000 to you. If your ads cost more than that per enquiry, you lose money. If they cost much less, there may be room to spend more."
+  ],
+  [
+   "h2",
+   "Why testing needs time"
+  ],
+  [
+   "p",
+   "Ads need data. In the first weeks you learn which keywords bring useful enquiries and which waste money. A budget so small that it brings only a handful of clicks makes it hard to learn anything. Plan for at least a few months of testing, and judge results on enquiries, not clicks."
+  ],
+  [
+   "h2",
+   "What affects your cost"
+  ],
+  [
+   "ul",
+   [
+    "Competition for your keywords and city.",
+    "The quality of your ads and your website.",
+    "Your targeting, such as location and schedule.",
+    "How well your tracking shows which ads bring enquiries."
+   ]
+  ],
+  [
+   "h2",
+   "Ad spend and management fees are separate"
+  ],
+  [
+   "p",
+   "Ad spend is paid to Google. A management fee is paid to whoever runs the campaigns. Ask any agency, including us, to list both clearly before you begin."
+  ],
+  [
+   "h2",
+   "Next step"
+  ],
+  [
+   "p",
+   "Tell us your service, city and what a customer is worth. We will suggest a starting plan and explain the numbers in plain language."
+  ]
+ ],
+ "faq": [
+  [
+   "What is the minimum budget for Google Ads?",
+   "Google does not require one fixed amount, but a very small budget gives little data to learn from. Decide a figure you can sustain for a few months."
+  ],
+  [
+   "Do I pay Google or my agency for ad clicks?",
+   "You pay Google for ad spend. The agency fee is separate and should be agreed in writing."
+  ],
+  [
+   "How do I know if my budget is working?",
+   "Track enquiries and the cost of each one. If cost per enquiry is below what a customer is worth to you, the budget is working."
+  ]
+ ],
+ "related": [
+  "google-ads-vs-meta-ads-pakistan",
+  "conversion-tracking-google-ads-meta-ads"
+ ],
+ "extra_service": null,
+ "date": "2026-10-26",
+ "draft": false,
+ "updated": "2026-10-28"
+}

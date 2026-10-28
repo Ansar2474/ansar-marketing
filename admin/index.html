@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Admin | Ansar Marketing Services</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+:root{--navy:#0A1B5C;--blue:#2358E6;--cyan:#22D3EE;--bg:#F4F7FD;--card:#fff;--fg:#0B1330;--fg2:#47506B;--line:#DCE3F3;--ok:#0E8A5F;--bad:#C0392B;--warn:#B7791F}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--fg)}
+h1,h2,h3{margin:0;line-height:1.2}
+a{color:var(--blue)}
+.top{background:var(--navy);color:#fff;display:flex;align-items:center;gap:14px;padding:12px 20px;position:sticky;top:0;z-index:5;flex-wrap:wrap}
+.top b{font-size:1.05rem}.top .sp{flex:1}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.tabs button{background:transparent;color:#CFE0FF;border:1px solid transparent;border-radius:999px;padding:8px 16px;font:600 .95rem system-ui;cursor:pointer}
+.tabs button[aria-current=true]{background:#fff;color:var(--navy)}
+.tabs button:hover{border-color:#5B7BD9}
+main{max-width:1000px;margin:0 auto;padding:22px 16px 80px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;margin-bottom:16px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.stat b{display:block;font-size:1.9rem;color:var(--navy)}
+.stat span{color:var(--fg2);font-size:.92rem}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;border:0;border-radius:12px;padding:11px 18px;font:600 .95rem system-ui;cursor:pointer;text-decoration:none}
+.btn:hover{background:#1747C4}.btn[disabled]{opacity:.55;cursor:wait}
+.btn.ghost{background:#fff;color:var(--navy);border:1px solid var(--line)}.btn.ghost:hover{background:#EEF3FF}
+.btn.danger{background:#fff;color:var(--bad);border:1px solid #E9B8B2}.btn.danger:hover{background:#FDEEEC}
+.btn.sm{padding:7px 12px;font-size:.86rem}
+label{display:block;font-weight:600;margin:14px 0 5px;font-size:.93rem}
+label small{font-weight:400;color:var(--fg2)}
+input,select,textarea{width:100%;font:inherit;padding:10px 12px;border:1px solid #BFCBE6;border-radius:10px;background:#fff;color:var(--fg)}
+input:focus,select:focus,textarea:focus,.btn:focus-visible,button:focus-visible{outline:3px solid #9DB8FF;outline-offset:1px}
+textarea{min-height:120px;resize:vertical}
+textarea.body{min-height:360px;font:15px/1.6 ui-monospace,Menlo,Consolas,monospace}
+.row{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+@media(max-width:640px){.row{grid-template-columns:1fr}}
+.list .item{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:12px 0;border-top:1px solid var(--line);flex-wrap:wrap}
+.list .item:first-child{border-top:0}
+.pill{display:inline-block;border-radius:999px;padding:2px 10px;font-size:.78rem;font-weight:700}
+.pill.ok{background:#DDF5EA;color:var(--ok)}.pill.draft{background:#FFF1D6;color:var(--warn)}.pill.wip{background:#E4ECFF;color:var(--blue)}
+.muted{color:var(--fg2)}.small{font-size:.88rem}
+.msg{padding:12px 14px;border-radius:12px;margin:12px 0;font-weight:600}
+.msg.ok{background:#DDF5EA;color:#0A5E41}.msg.err{background:#FDEEEC;color:#9B2C20}.msg.info{background:#E4ECFF;color:#173A9C}
+.count{float:right;font-weight:600;font-size:.82rem}.count.good{color:var(--ok)}.count.warn{color:var(--warn)}
+.faqrow{border:1px dashed #BFCBE6;border-radius:12px;padding:12px;margin:10px 0}
+.chk{display:flex;gap:8px;align-items:flex-start;margin:6px 0;font-weight:400}
+.chk input{width:auto;margin-top:5px}
+code{background:#EEF3FF;padding:1px 6px;border-radius:6px}
+pre.help{background:#0F1B45;color:#DCE6FF;padding:14px;border-radius:12px;overflow:auto;font-size:.88rem}
+.login{max-width:520px;margin:6vh auto}
+ol.steps li{margin:8px 0}
+.thumb{width:84px;height:116px;object-fit:cover;object-position:top;border-radius:8px;border:1px solid var(--line)}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+"use strict";
+var REPO = 'Ansar2474/ansar-marketing', BRANCH = 'main', API = 'https://api.github.com';
+var SERVICES = [['', 'None'], ['google-ads-management', 'Google Ads Management'], ['meta-ads-management', 'Meta Ads Management'], ['digital-marketing', 'Digital Marketing'], ['website-development', 'Website Development']];
+var LINKS = [
+  ['Google Search Console', 'https://search.google.com/search-console'],
+  ['PageSpeed Insights', 'https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fansar.me%2F'],
+  ['Rich Results Test', 'https://search.google.com/test/rich-results?url=https%3A%2F%2Fansar.me%2F'],
+  ['Bing Webmaster Tools', 'https://www.bing.com/webmasters'],
+  ['Google Apps Script', 'https://script.google.com/home'],
+  ['Site code on GitHub', 'https://github.com/' + REPO],
+  ['Live website', 'https://ansar.me/']
+];
+var S = { tab: 'dash', posts: null, projects: null, projectsSha: null, edit: null, msg: null, busy: false, info: {} };
+var TOKEN = ''; try { TOKEN = localStorage.getItem('ansar_admin_token') || ''; } catch (e) {}
+function ls(k, v) { try { if (v === undefined) return localStorage.getItem(k) || ''; localStorage.setItem(k, v); } catch (e) {} return ''; }
+var $ = function (s, r) { return (r || document).querySelector(s); };
+function esc(t) { return String(t == null ? '' : t).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+function slugify(t) { return String(t).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 80); }
+function today() { var d = new Date(), z = function (n) { return (n < 10 ? '0' : '') + n; }; return d.getFullYear() + '-' + z(d.getMonth() + 1) + '-' + z(d.getDate()); }
+
+/* ---------- GitHub helpers ---------- */
+function gh(path, opt) {
+  opt = opt || {};
+  return fetch(API + path, { method: opt.method || 'GET', headers: Object.assign({ 'Authorization': 'Bearer ' + TOKEN, 'Accept': opt.raw ? 'application/vnd.github.raw+json' : 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28' }, opt.body ? { 'Content-Type': 'application/json' } : {}), body: opt.body ? JSON.stringify(opt.body) : undefined, cache: 'no-store' })
+    .then(function (r) {
+      if (r.status === 204) return null;
+      if (opt.raw && r.ok) return r.text();
+      return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok) { var e = new Error(j.message || ('GitHub error ' + r.status)); e.status = r.status; throw e; } return j; });
+    });
+}
+function b64(str) { var b = new TextEncoder().encode(str), s = ''; for (var i = 0; i < b.length; i++) s += String.fromCharCode(b[i]); return btoa(s); }
+function listDir(p) { return gh('/repos/' + REPO + '/contents/' + p + '?ref=' + BRANCH).catch(function (e) { if (e.status === 404) return []; throw e; }); }
+function readJson(p) { return gh('/repos/' + REPO + '/contents/' + p + '?ref=' + BRANCH, { raw: true }).then(function (t) { return JSON.parse(t); }); }
+function putFile(path, content64, message, sha) { return gh('/repos/' + REPO + '/contents/' + path, { method: 'PUT', body: { message: message, content: content64, branch: BRANCH, sha: sha || undefined } }); }
+function delFile(path, sha, message) { return gh('/repos/' + REPO + '/contents/' + path, { method: 'DELETE', body: { message: message, sha: sha, branch: BRANCH } }); }
+function fileSha(path) { return gh('/repos/' + REPO + '/contents/' + path + '?ref=' + BRANCH).then(function (j) { return j.sha; }).catch(function (e) { if (e.status === 404) return null; throw e; }); }
+
+/* ---------- data ---------- */
+function loadPosts() {
+  return listDir('content/posts').then(function (files) {
+    files = files.filter(function (f) { return /\.json$/.test(f.name); });
+    return Promise.all(files.map(function (f) { return readJson(f.path).then(function (j) { j._sha = f.sha; return j; }); }));
+  }).then(function (arr) { arr.sort(function (a, b) { return (b.date + b.slug).localeCompare(a.date + a.slug); }); S.posts = arr; });
+}
+function loadProjects() {
+  return gh('/repos/' + REPO + '/contents/content/projects.json?ref=' + BRANCH).then(function (f) {
+    return readJson('content/projects.json').then(function (j) { S.projects = j; S.projectsSha = f.sha; });
+  });
+}
+function loadInfo() {
+  var p1 = gh('/repos/' + REPO + '/commits?per_page=1&sha=' + BRANCH).then(function (c) { S.info.commit = c[0]; }).catch(function () {});
+  var p2 = gh('/repos/' + REPO + '/actions/runs?per_page=1&event=push').then(function (r) { S.info.run = (r.workflow_runs || [])[0]; }).catch(function () {});
+  return Promise.all([p1, p2]);
+}
+
+/* ---------- body text <-> blocks ---------- */
+function bodyToText(b) {
+  return (b || []).map(function (x) { return x[0] === 'h2' ? '## ' + x[1] : x[0] === 'ul' ? x[1].map(function (i) { return '- ' + i; }).join('\n') : x[1]; }).join('\n\n');
+}
+function textToBody(t) {
+  return String(t).replace(/\r/g, '').split(/\n\s*\n/).map(function (b) { return b.trim(); }).filter(Boolean).map(function (b) {
+    if (/^##\s+/.test(b)) return ['h2', b.replace(/^##\s+/, '').replace(/\n+/g, ' ')];
+    var lines = b.split('\n');
+    if (lines.every(function (l) { return /^[-*]\s+/.test(l.trim()); })) return ['ul', lines.map(function (l) { return l.trim().replace(/^[-*]\s+/, ''); })];
+    return ['p', lines.map(function (l) { return l.trim(); }).join(' ')];
+  });
+}
+function wordCount(body) { return body.reduce(function (n, x) { return n + (x[0] === 'ul' ? x[1].join(' ') : x[1]).split(/\s+/).filter(Boolean).length; }, 0); }
+
+/* ---------- rendering ---------- */
+function msgHtml() { return S.msg ? '<div class="msg ' + S.msg[0] + '" role="status">' + S.msg[1] + '</div>' : ''; }
+function setMsg(t, m) { S.msg = m ? [t, m] : null; }
+function flash(t, m) { setMsg(t, m); var mn = $('main'); var o = mn.querySelector('.msg'); if (o) o.remove(); mn.insertAdjacentHTML('afterbegin', msgHtml()); window.scrollTo(0, 0); }
+function render() {
+  var app = $('#app');
+  if (!TOKEN || !S.user) { app.innerHTML = loginHtml(); bindLogin(); return; }
+  var tabs = [['dash', 'Dashboard'], ['posts', 'Blog posts'], ['projects', 'Projects'], ['help', 'How it works']];
+  app.innerHTML = '<div class="top"><b>Ansar admin</b><div class="tabs" role="tablist">' + tabs.map(function (t) { return '<button data-tab="' + t[0] + '" aria-current="' + (S.tab === t[0]) + '">' + t[1] + '</button>'; }).join('') + '</div><span class="sp"></span><span class="small">' + esc(S.user.login) + '</span><button class="btn ghost sm" id="out">Log out</button></div><main>' + msgHtml() + '<div id="view"></div></main>';
+  $('#out').onclick = function () { TOKEN = ''; S.user = null; ls('ansar_admin_token', ''); render(); };
+  Array.prototype.forEach.call(document.querySelectorAll('[data-tab]'), function (b) { b.onclick = function () { S.tab = b.getAttribute('data-tab'); S.edit = null; setMsg(); go(); }; });
+  go();
+}
+function go() {
+  document.querySelectorAll('[data-tab]').forEach(function (b) { b.setAttribute('aria-current', String(b.getAttribute('data-tab') === S.tab)); });
+  var m = $('main'); var old = m.querySelector('.msg'); if (old) old.remove(); if (S.msg) m.insertAdjacentHTML('afterbegin', msgHtml());
+  var v = $('#view');
+  if (S.tab === 'dash') return viewDash(v);
+  if (S.tab === 'posts') return S.edit ? viewPostEdit(v) : viewPosts(v);
+  if (S.tab === 'projects') return S.edit ? viewProjectEdit(v) : viewProjects(v);
+  if (S.tab === 'help') return viewHelp(v);
+}
+function loginHtml() {
+  return '<div class="login"><div class="card"><h1>Ansar admin</h1><p class="muted">Manage your blog posts and portfolio projects. Only you can use this page: it needs a private key from your GitHub account.</p>'
+    + (S.msg ? msgHtml() : '')
+    + '<ol class="steps small"><li>Open <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">GitHub: new fine-grained token</a> (log in if asked).</li><li>Name: <code>Ansar admin</code>. Expiration: 90 days (you can renew later).</li><li>Repository access: choose <b>Only select repositories</b>, then <code>ansar-marketing</code>.</li><li>Permissions, then Repository permissions: set <b>Contents</b> to <b>Read and write</b>, and <b>Actions</b> to <b>Read and write</b>.</li><li>Click <b>Generate token</b>, copy it, and paste it below.</li></ol>'
+    + '<label for="tok">Your GitHub token</label><input id="tok" type="password" autocomplete="off" placeholder="github_pat_..."><p class="small muted">It is saved only in this browser. Use "Log out" on shared computers.</p><p><button class="btn" id="go">Log in</button></p></div></div>';
+}
+function bindLogin() {
+  var inp = $('#tok'); if (!inp) return;
+  var run = function () {
+    TOKEN = inp.value.trim(); if (!TOKEN) return;
+    $('#go').disabled = true; $('#go').textContent = 'Checking...';
+    gh('/user').then(function (u) { S.user = u; return gh('/repos/' + REPO); }).then(function (r) {
+      if (!r.permissions || !r.permissions.push) throw new Error('This token cannot write to ' + REPO + '. Set Contents to Read and write.');
+      ls('ansar_admin_token', TOKEN); setMsg(); S.tab = 'dash'; render();
+    }).catch(function (e) { TOKEN = ''; S.user = null; setMsg('err', esc(e.message)); render(); });
+  };
+  $('#go').onclick = run; inp.onkeydown = function (e) { if (e.key === 'Enter') run(); };
+}
+
+function viewDash(v) {
+  v.innerHTML = '<div class="card">Loading...</div>';
+  Promise.all([S.posts ? 0 : loadPosts(), S.projects ? 0 : loadProjects(), loadInfo()]).then(function () {
+    var pub = S.posts.filter(function (p) { return !p.draft; }).length, dr = S.posts.length - pub;
+    var c = S.info.commit, r = S.info.run;
+    var buildTxt = !r ? 'No build yet' : (r.status !== 'completed' ? 'Building now...' : (r.conclusion === 'success' ? 'Last build succeeded' : 'Last build: ' + esc(r.conclusion)));
+    var sheet = ls('ansar_sheet_url');
+    v.innerHTML = '<div class="grid">'
+      + '<div class="card stat"><b>' + pub + '</b><span>Published blog posts' + (dr ? ' (' + dr + ' draft)' : '') + '</span></div>'
+      + '<div class="card stat"><b>' + S.projects.length + '</b><span>Portfolio projects</span></div>'
+      + '<div class="card stat"><b style="font-size:1.1rem">' + (c ? esc(new Date(c.commit.author.date).toLocaleString()) : '-') + '</b><span>Last change to the site</span></div>'
+      + '<div class="card stat"><b style="font-size:1.1rem">' + buildTxt + '</b><span>Page builder</span></div></div>'
+      + '<div class="card"><h2>Quick actions</h2><p><button class="btn" id="np">Write a new blog post</button> <button class="btn ghost" id="nj">Add a project</button> <button class="btn ghost" id="rb">Rebuild site now</button></p></div>'
+      + '<div class="card"><h2>Leads (people who fill your forms)</h2><p class="muted">Every form enquiry is saved in your Google Sheet "Ansar.me Leads" and emailed to you. Your visitors\' details stay in your Google account, not in this panel. Paste the sheet address once to get a button here.</p>'
+      + (sheet ? '<p><a class="btn" href="' + esc(sheet) + '" target="_blank" rel="noopener">Open the leads sheet</a> <button class="btn ghost sm" id="cs">Change address</button></p>' : '<label for="su">Google Sheet address</label><input id="su" placeholder="https://docs.google.com/spreadsheets/d/..."><p><button class="btn sm" id="ss">Save address</button></p>')
+      + '</div>'
+      + '<div class="card"><h2>Visitors and rankings</h2><p class="muted">This panel does not show website visitors, because the site has no analytics installed yet. Use Google Search Console for impressions, clicks and search queries. If you want visitor counts, the next step is adding Google Analytics 4 (free).</p></div>'
+      + '<div class="card"><h2>Useful links</h2><p>' + LINKS.map(function (l) { return '<a class="btn ghost sm" href="' + l[1] + '" target="_blank" rel="noopener">' + l[0] + '</a>'; }).join(' ') + '</p></div>';
+    $('#np').onclick = function () { S.tab = 'posts'; S.edit = newPost(); go(); };
+    $('#nj').onclick = function () { S.tab = 'projects'; S.edit = newProject(); go(); };
+    $('#rb').onclick = rebuild;
+    var ss = $('#ss'); if (ss) ss.onclick = function () { var u = $('#su').value.trim(); if (/^https:\/\/docs\.google\.com\/spreadsheets\//.test(u)) { ls('ansar_sheet_url', u); go(); } else { flash('err', 'Please paste the address of your Google Sheet (it starts with https://docs.google.com/spreadsheets/).'); } };
+    var cs = $('#cs'); if (cs) cs.onclick = function () { ls('ansar_sheet_url', ''); go(); };
+  }).catch(fail);
+}
+function rebuild() {
+  gh('/repos/' + REPO + '/actions/workflows/build.yml/dispatches', { method: 'POST', body: { ref: BRANCH } }).then(function () { setMsg('ok', 'Rebuild started. The live site updates in about 2 minutes.'); go(); }).catch(function (e) { setMsg('err', 'Could not start the rebuild: ' + esc(e.message) + '. Check the token has Actions set to Read and write.'); go(); });
+}
+function fail(e) {
+  if (e && e.status === 401) { TOKEN = ''; S.user = null; ls('ansar_admin_token', ''); setMsg('err', 'Your token has expired or is not valid. Please log in again.'); return render(); }
+  setMsg('err', esc(e && e.message || e)); go();
+}
+var SAVED_NOTE = ' It goes live in about 2 to 3 minutes, after the page builder finishes.';
+
+/* ---------- posts ---------- */
+function newPost() { return { _new: true, slug: '', title: '', desc: '', kw: '', mins: 1, service: '', extra_service: '', answer: '', body: [], faq: [], related: [], date: today(), draft: true }; }
+function viewPosts(v) {
+  v.innerHTML = '<div class="card">Loading...</div>';
+  (S.posts ? Promise.resolve() : loadPosts()).then(function () {
+    v.innerHTML = '<div class="card"><p><button class="btn" id="np">Write a new blog post</button></p><div class="list">' + S.posts.map(function (p, i) {
+      return '<div class="item"><div><b>' + esc(p.title) + '</b><br><span class="small muted">' + esc(p.date) + ' · /blog/' + esc(p.slug) + '/</span></div><div><span class="pill ' + (p.draft ? 'draft' : 'ok') + '">' + (p.draft ? 'Draft' : 'Published') + '</span> <button class="btn ghost sm" data-e="' + i + '">Edit</button></div></div>';
+    }).join('') + '</div></div>';
+    $('#np').onclick = function () { S.edit = newPost(); go(); };
+    v.querySelectorAll('[data-e]').forEach(function (b) { b.onclick = function () { S.edit = JSON.parse(JSON.stringify(S.posts[+b.getAttribute('data-e')])); go(); }; });
+  }).catch(fail);
+}
+function counter(id, min, max) { return '<span class="count" id="' + id + '"></span>'; }
+function setCount(id, n, min, max) { var e = $('#' + id); if (!e) return; e.textContent = n + ' characters (best: ' + min + ' to ' + max + ')'; e.className = 'count ' + (n >= min && n <= max ? 'good' : 'warn'); }
+function viewPostEdit(v) {
+  var p = S.edit, others = (S.posts || []).filter(function (x) { return x.slug !== p.slug; });
+  v.innerHTML = '<div class="card"><h2>' + (p._new ? 'New blog post' : 'Edit blog post') + '</h2>'
+    + '<label for="f-title">Title (this is the page heading and Google title) ' + counter('c-title') + '</label><input id="f-title" value="' + esc(p.title) + '">'
+    + '<label for="f-slug">Web address ending <small>(letters, numbers and dashes only; fixed after the post is first saved)</small></label><input id="f-slug" value="' + esc(p.slug) + '"' + (p._new ? '' : ' disabled') + '><div class="small muted">ansar.me/blog/<span id="slugprev">' + esc(p.slug) + '</span>/</div>'
+    + '<label for="f-desc">Short description for Google ' + counter('c-desc') + '</label><textarea id="f-desc" style="min-height:80px">' + esc(p.desc) + '</textarea>'
+    + '<div class="row"><div><label for="f-kw">Main keyword or topic <small>(used in the breadcrumb)</small></label><input id="f-kw" value="' + esc(p.kw) + '"></div><div><label for="f-date">Publish date</label><input id="f-date" type="date" value="' + esc(p.date) + '"></div></div>'
+    + '<div class="row"><div><label for="f-svc">Main related service</label><select id="f-svc">' + SERVICES.map(function (s) { return '<option value="' + s[0] + '"' + (p.service === s[0] ? ' selected' : '') + '>' + s[1] + '</option>'; }).join('') + '</select></div><div><label for="f-svc2">Second related service</label><select id="f-svc2">' + SERVICES.map(function (s) { return '<option value="' + s[0] + '"' + ((p.extra_service || '') === s[0] ? ' selected' : '') + '>' + s[1] + '</option>'; }).join('') + '</select></div></div>'
+    + '<label for="f-ans">Short answer box <small>(2 to 3 sentences that answer the main question directly; AI search tools often quote this)</small></label><textarea id="f-ans" style="min-height:100px">' + esc(p.answer) + '</textarea>'
+    + '<label for="f-body">Article text</label><p class="small muted" style="margin:0 0 6px">Leave a blank line between paragraphs. Start a line with <code>## </code> for a heading. Start lines with <code>- </code> for a bullet list.</p><textarea id="f-body" class="body">' + esc(bodyToText(p.body)) + '</textarea><div class="small muted" id="wc"></div>'
+    + '<h3 style="margin-top:22px">Quick answers (FAQ)</h3><p class="small muted">Real questions readers ask. Good for Google and AI answers.</p><div id="faqs"></div><p><button class="btn ghost sm" id="addq">Add a question</button></p>'
+    + '<h3 style="margin-top:18px">Keep reading links</h3><div id="rel">' + (others.length ? others.map(function (o) { return '<label class="chk"><input type="checkbox" value="' + esc(o.slug) + '"' + ((p.related || []).indexOf(o.slug) > -1 ? ' checked' : '') + '><span>' + esc(o.title) + '</span></label>'; }).join('') : '<p class="muted small">No other posts yet.</p>') + '</div>'
+    + '<label class="chk" style="margin-top:20px"><input type="checkbox" id="f-pub"' + (p.draft ? '' : ' checked') + '><span><b>Publish this post on the website</b><br><span class="small muted">Leave unticked to keep it as a private draft.</span></span></label>'
+    + '<p style="margin-top:18px"><button class="btn" id="save">Save</button> <button class="btn ghost" id="cancel">Back to list</button> ' + (p._new ? '' : '<button class="btn danger" id="del" style="float:right">Delete post</button>') + '</p></div>';
+  function faqRow(q, a) { var d = document.createElement('div'); d.className = 'faqrow'; d.innerHTML = '<label>Question</label><input class="fq" value="' + esc(q) + '"><label>Answer</label><textarea class="fa" style="min-height:70px">' + esc(a) + '</textarea><p><button class="btn danger sm" type="button">Remove</button></p>'; d.querySelector('button').onclick = function () { d.remove(); }; $('#faqs').appendChild(d); }
+  (p.faq || []).forEach(function (f) { faqRow(f[0], f[1]); }); $('#addq').onclick = function () { faqRow('', ''); };
+  function upd() { setCount('c-title', $('#f-title').value.length, 30, 65); setCount('c-desc', $('#f-desc').value.length, 110, 160); $('#wc').textContent = wordCount(textToBody($('#f-body').value)) + ' words (about ' + Math.max(1, Math.round(wordCount(textToBody($('#f-body').value)) / 200)) + ' min read)'; }
+  ['f-title', 'f-desc', 'f-body'].forEach(function (i) { $('#' + i).addEventListener('input', upd); }); upd();
+  if (p._new) $('#f-title').addEventListener('input', function () { if (!$('#f-slug').dataset.touched) { $('#f-slug').value = slugify($('#f-title').value); $('#slugprev').textContent = $('#f-slug').value; } });
+  $('#f-slug').addEventListener('input', function () { this.dataset.touched = '1'; $('#slugprev').textContent = slugify(this.value); });
+  $('#cancel').onclick = function () { S.edit = null; setMsg(); go(); };
+  $('#save').onclick = function () { savePost(p); };
+  var d = $('#del'); if (d) d.onclick = function () { if (confirm('Delete this post permanently?')) deletePost(p); };
+}
+function savePost(p) {
+  var title = $('#f-title').value.trim(), slug = slugify($('#f-slug').value), desc = $('#f-desc').value.trim(), ans = $('#f-ans').value.trim(), body = textToBody($('#f-body').value), pub = $('#f-pub').checked;
+  var faq = []; document.querySelectorAll('.faqrow').forEach(function (r) { var q = r.querySelector('.fq').value.trim(), a = r.querySelector('.fa').value.trim(); if (q && a) faq.push([q, a]); });
+  var errs = []; if (!title) errs.push('Add a title.'); if (!slug) errs.push('Add a web address ending.'); if (!desc) errs.push('Add a short description.'); if (!ans) errs.push('Add the short answer.'); if (!body.length) errs.push('Write the article text.');
+  if (p._new && (S.posts || []).some(function (x) { return x.slug === slug; })) errs.push('A post with this web address already exists.');
+  if (errs.length) { flash('err', errs.join(' ')); return; }
+  var rel = []; document.querySelectorAll('#rel input:checked').forEach(function (c) { rel.push(c.value); });
+  var out = { slug: slug, title: title, desc: desc, kw: $('#f-kw').value.trim() || title, mins: Math.max(1, Math.round(wordCount(body) / 200)), service: $('#f-svc').value, extra_service: $('#f-svc2').value, answer: ans, body: body, faq: faq, related: rel, date: $('#f-date').value || today(), updated: today(), draft: !pub };
+  if (!out.service) delete out.service; if (!out.extra_service) out.extra_service = '';
+  var btn = $('#save'); btn.disabled = true; btn.textContent = 'Saving...';
+  var path = 'content/posts/' + slug + '.json';
+  putFile(path, b64(JSON.stringify(out, null, 1)), (p._new ? 'Add post: ' : 'Update post: ') + title, p._sha).then(function () {
+    S.posts = null; S.edit = null; setMsg('ok', 'Saved "' + esc(title) + '".' + (pub ? SAVED_NOTE : ' It is kept as a draft and is not on the website.')); go();
+  }).catch(function (e) { btn.disabled = false; btn.textContent = 'Save'; fail(e); });
+}
+function deletePost(p) {
+  delFile('content/posts/' + p.slug + '.json', p._sha, 'Delete post: ' + p.title).then(function () { S.posts = null; S.edit = null; setMsg('ok', 'Post deleted.' + SAVED_NOTE); go(); }).catch(fail);
+}
+
+/* ---------- projects ---------- */
+function newProject() { return { _new: true, id: '', name: '', brand: '', industry: '', status: 'wip', services: [], overview: '', outcome: '', url: '', image: '' }; }
+var STATUS = { live: 'Live project', wip: 'In progress', case: 'Case study (verified client results only)' };
+function viewProjects(v) {
+  v.innerHTML = '<div class="card">Loading...</div>';
+  (S.projects ? Promise.resolve() : loadProjects()).then(function () {
+    v.innerHTML = '<div class="card"><p><button class="btn" id="np">Add a project</button></p><div class="list">' + S.projects.map(function (p, i) {
+      return '<div class="item"><div style="display:flex;gap:12px;align-items:center">' + (p.image ? '<img class="thumb" alt="" src="/' + esc(p.image) + '">' : '') + '<div><b>' + esc(p.name) + '</b><br><span class="small muted">' + esc(p.industry) + '</span></div></div><div><span class="pill ' + (p.status === 'wip' ? 'wip' : 'ok') + '">' + esc(STATUS[p.status] ? STATUS[p.status].split(' (')[0] : p.status) + '</span> <button class="btn ghost sm" data-u="' + i + '" ' + (i === 0 ? 'disabled' : '') + ' aria-label="Move up">Up</button> <button class="btn ghost sm" data-e="' + i + '">Edit</button></div></div>';
+    }).join('') + '</div><p class="small muted">Projects are shown on the Our Work page grouped by status, in this order.</p></div>';
+    $('#np').onclick = function () { S.edit = newProject(); go(); };
+    v.querySelectorAll('[data-e]').forEach(function (b) { b.onclick = function () { S.edit = JSON.parse(JSON.stringify(S.projects[+b.getAttribute('data-e')])); S.edit._i = +b.getAttribute('data-e'); go(); }; });
+    v.querySelectorAll('[data-u]').forEach(function (b) { b.onclick = function () { var i = +b.getAttribute('data-u'), a = S.projects.slice(); var t = a[i - 1]; a[i - 1] = a[i]; a[i] = t; saveProjects(a, 'Reorder projects', 'Order saved.'); }; });
+  }).catch(fail);
+}
+function saveProjects(arr, msg, ok) {
+  return putFile('content/projects.json', b64(JSON.stringify(arr, null, 1)), msg, S.projectsSha).then(function () { S.projects = null; S.edit = null; setMsg('ok', ok + SAVED_NOTE); go(); }).catch(fail);
+}
+function viewProjectEdit(v) {
+  var p = S.edit;
+  v.innerHTML = '<div class="card"><h2>' + (p._new ? 'Add a project' : 'Edit project') + '</h2>'
+    + '<div class="row"><div><label for="p-name">Project title</label><input id="p-name" value="' + esc(p.name) + '"></div><div><label for="p-brand">Business name <small>(shown next to the logo)</small></label><input id="p-brand" value="' + esc(p.brand) + '"></div></div>'
+    + '<div class="row"><div><label for="p-ind">Industry and place</label><input id="p-ind" placeholder="e.g. Restaurant · Lahore" value="' + esc(p.industry) + '"></div><div><label for="p-st">Status</label><select id="p-st">' + Object.keys(STATUS).map(function (k) { return '<option value="' + k + '"' + (p.status === k ? ' selected' : '') + '>' + STATUS[k] + '</option>'; }).join('') + '</select></div></div>'
+    + '<label for="p-svc">Services provided <small>(separate with commas)</small></label><input id="p-svc" placeholder="Website Development, Google Ads" value="' + esc((p.services || []).join(', ')) + '">'
+    + '<label for="p-ov">Project overview</label><textarea id="p-ov">' + esc(p.overview) + '</textarea>'
+    + '<label for="p-out">Verified results <small>(leave empty unless you can prove them. Never invent numbers.)</small></label><textarea id="p-out" style="min-height:80px">' + esc(p.outcome) + '</textarea>'
+    + '<label for="p-url">Live website address <small>(optional)</small></label><input id="p-url" placeholder="https://" value="' + esc(p.url) + '">'
+    + '<label for="p-img">Screenshot <small>(optional. A phone screenshot of the home page works best. It is resized automatically.)</small></label>' + (p.image ? '<p><img class="thumb" alt="Current screenshot" src="/' + esc(p.image) + '"></p>' : '') + '<input id="p-img" type="file" accept="image/*">'
+    + '<p style="margin-top:18px"><button class="btn" id="save">Save</button> <button class="btn ghost" id="cancel">Back to list</button> ' + (p._new ? '' : '<button class="btn danger" id="del" style="float:right">Delete project</button>') + '</p></div>';
+  $('#cancel').onclick = function () { S.edit = null; setMsg(); go(); };
+  $('#save').onclick = function () { saveProject(p); };
+  var d = $('#del'); if (d) d.onclick = function () { if (confirm('Delete this project?')) { var a = S.projects.slice(); a.splice(p._i, 1); saveProjects(a, 'Delete project: ' + p.name, 'Project deleted.'); } };
+}
+function resizeImage(file) {
+  return new Promise(function (res, rej) {
+    var img = new Image(), u = URL.createObjectURL(file);
+    img.onload = function () { var w = Math.min(560, img.width), h = Math.round(img.height * w / img.width), c = document.createElement('canvas'); c.width = w; c.height = h; c.getContext('2d').drawImage(img, 0, 0, w, h); URL.revokeObjectURL(u); res(c.toDataURL('image/jpeg', 0.8).split(',')[1]); };
+    img.onerror = function () { rej(new Error('That file could not be read as an image.')); }; img.src = u;
+  });
+}
+function saveProject(p) {
+  var name = $('#p-name').value.trim(), ov = $('#p-ov').value.trim(), url = $('#p-url').value.trim();
+  var errs = []; if (!name) errs.push('Add a project title.'); if (!ov) errs.push('Add a project overview.'); if (url && !/^https:\/\//.test(url)) errs.push('The website address must start with https://');
+  if (errs.length) { flash('err', errs.join(' ')); return; }
+  var id = p.id || slugify(name) || ('project-' + Date.now());
+  var out = Object.assign({}, p); delete out._new; delete out._i;
+  Object.assign(out, { id: id, name: name, brand: $('#p-brand').value.trim(), industry: $('#p-ind').value.trim(), status: $('#p-st').value, services: $('#p-svc').value.split(',').map(function (x) { return x.trim(); }).filter(Boolean), overview: ov, outcome: $('#p-out').value.trim(), url: url });
+  var btn = $('#save'); btn.disabled = true; btn.textContent = 'Saving...';
+  var file = $('#p-img').files[0];
+  var step = file ? resizeImage(file).then(function (data) { var path = 'assets/projects/' + id + '.jpg'; out.image = path; out.imageAlt = 'Screenshot of the ' + name + ' website'; return fileSha(path).then(function (sha) { return putFile(path, data, 'Add project image: ' + name, sha); }); }) : Promise.resolve();
+  step.then(function () {
+    var a = S.projects.slice(); if (p._new) a.push(out); else a[p._i] = out;
+    return saveProjects(a, (p._new ? 'Add project: ' : 'Update project: ') + name, 'Saved "' + esc(name) + '".');
+  }).catch(function (e) { btn.disabled = false; btn.textContent = 'Save'; fail(e); });
+}
+
+/* ---------- help ---------- */
+function viewHelp(v) {
+  v.innerHTML = '<div class="card"><h2>How this admin works</h2><ol class="steps"><li>You write or change a post or project here and press <b>Save</b>.</li><li>The panel saves it in your GitHub site code. Nothing is stored on any other server, so there is no monthly cost.</li><li>A page builder runs automatically and creates the web pages, the blog list, the Our Work list and the sitemap.</li><li>About 2 to 3 minutes later the change is live on ansar.me.</li></ol></div>'
+    + '<div class="card"><h2>Good to know</h2><ul><li>Your changes are saved with full history on GitHub, so mistakes can be undone.</li><li>Drafts are never published and are not in the sitemap.</li><li>The token is saved in this browser only. If you lose it or it expires, create a new one the same way and log in again.</li><li>This page cannot show visitor numbers or lead details. Leads are in your Google Sheet and visitor data comes from Google Search Console or Analytics.</li><li>The text of the home page, service pages and About page is not edited here yet. Ask Claude to change those.</li></ul></div>';
+}
+
+render();
+if (TOKEN) { gh('/user').then(function (u) { S.user = u; render(); }).catch(function (e) { TOKEN = ''; ls('ansar_admin_token', ''); setMsg('err', 'Please log in again: ' + esc(e.message)); render(); }); }
+</script>
+</body>
+</html>
