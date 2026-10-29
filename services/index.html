@@ -1013,7 +1013,7 @@ document.addEventListener('submit', e => {
   const form = e.target;
   const lines = [(form.dataset.kind === 'audit' ? 'Hello Ansar Marketing Services, I would like a free audit of my business.' : 'Hello Ansar Marketing Services, I would like a free consultation.'), '', 'Name: ' + val('c-name'), val('c-biz') ? 'Business: ' + val('c-biz') : null, 'Phone or email: ' + val('c-contact'), ($('#c-link') && val('c-link')) ? 'Website or page: ' + val('c-link') : null, 'Service: ' + val('c-service'), val('c-budget') ? 'Budget: ' + val('c-budget') : null, '', 'About my business:', val('c-details')].filter(x => x !== null);
   const text = lines.join('\n');
-  const SHEET_URL = 'https://script.google.com/macros/s/AKfycbx9ptfoDzT-MLiskv3H59bb5F2igBx1gw6Xg6Ll2j5rNkG_CETioswRv0U3CHrtNuLS/exec'; // paste your Google Apps Script web app URL between the quotes
+  const SHEET_URL = 'https://script.google.com/macros/s/AKfycbxRMeoldCNVG_h8wxor1rdBYvaB-Xw_2heTdGeDKcKm5nU5zou_56SnVAwgr4FR-e4/exec'; // paste your Google Apps Script web app URL between the quotes
   if (SHEET_URL) { try { fetch(SHEET_URL, { method: 'POST', mode: 'no-cors', keepalive: true, headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify({ name: val('c-name'), business: val('c-biz'), contact: val('c-contact'), link: val('c-link'), service: val('c-service'), budget: val('c-budget'), details: val('c-details'), type: form.dataset.kind === 'audit' ? 'Free audit' : 'Consultation', page: location.href }) }).catch(function () {}); } catch (err) {} }
 
   const waUrl = 'https://wa.me/' + form.dataset.wa + '?text=' + encodeURIComponent(text);

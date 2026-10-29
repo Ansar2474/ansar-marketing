@@ -69,7 +69,7 @@ var LINKS = [
   ['Site code on GitHub', 'https://github.com/' + REPO],
   ['Live website', 'https://ansar.me/']
 ];
-var S = { tab: 'dash', posts: null, projects: null, projectsSha: null, edit: null, msg: null, busy: false, info: {} };
+var S = { pg: null, tab: 'dash', posts: null, projects: null, projectsSha: null, edit: null, msg: null, busy: false, info: {} };
 var TOKEN = ''; try { TOKEN = localStorage.getItem('ansar_admin_token') || ''; } catch (e) {}
 function ls(k, v) { try { if (v === undefined) return localStorage.getItem(k) || ''; localStorage.setItem(k, v); } catch (e) {} return ''; }
 var $ = function (s, r) { return (r || document).querySelector(s); };
@@ -133,10 +133,10 @@ function flash(t, m) { setMsg(t, m); var mn = $('main'); var o = mn.querySelecto
 function render() {
   var app = $('#app');
   if (!TOKEN || !S.user) { app.innerHTML = loginHtml(); bindLogin(); return; }
-  var tabs = [['dash', 'Dashboard'], ['posts', 'Blog posts'], ['projects', 'Projects'], ['help', 'How it works']];
+  var tabs = [['dash', 'Dashboard'], ['posts', 'Blog posts'], ['pages', 'Site pages'], ['projects', 'Projects'], ['help', 'How it works']];
   app.innerHTML = '<div class="top"><b>Ansar admin</b><div class="tabs" role="tablist">' + tabs.map(function (t) { return '<button data-tab="' + t[0] + '" aria-current="' + (S.tab === t[0]) + '">' + t[1] + '</button>'; }).join('') + '</div><span class="sp"></span><span class="small">' + esc(S.user.login) + '</span><button class="btn ghost sm" id="out">Log out</button></div><main>' + msgHtml() + '<div id="view"></div></main>';
   $('#out').onclick = function () { TOKEN = ''; S.user = null; ls('ansar_admin_token', ''); render(); };
-  Array.prototype.forEach.call(document.querySelectorAll('[data-tab]'), function (b) { b.onclick = function () { S.tab = b.getAttribute('data-tab'); S.edit = null; setMsg(); go(); }; });
+  Array.prototype.forEach.call(document.querySelectorAll('[data-tab]'), function (b) { b.onclick = function () { S.tab = b.getAttribute('data-tab'); S.edit = null; S.pg = null; setMsg(); go(); }; });
   go();
 }
 function go() {
@@ -146,6 +146,7 @@ function go() {
   if (S.tab === 'dash') return viewDash(v);
   if (S.tab === 'posts') return S.edit ? viewPostEdit(v) : viewPosts(v);
   if (S.tab === 'projects') return S.edit ? viewProjectEdit(v) : viewProjects(v);
+  if (S.tab === 'pages') return viewPages(v);
   if (S.tab === 'help') return viewHelp(v);
 }
 function loginHtml() {
@@ -313,10 +314,97 @@ function saveProject(p) {
   }).catch(function (e) { btn.disabled = false; btn.textContent = 'Save'; fail(e); });
 }
 
+
+/* ---------- site pages (text editor) ---------- */
+var PAGES = [['Home', 'index.html'], ['Services overview', 'services/index.html'], ['Google Ads page', 'services/google-ads-management/index.html'], ['Meta Ads page', 'services/meta-ads-management/index.html'], ['Digital Marketing page', 'services/digital-marketing/index.html'], ['Website Development page', 'services/website-development/index.html'], ['About', 'about/index.html'], ['Our Work (intro text)', 'our-work/index.html'], ['Contact', 'contact/index.html'], ['Privacy Policy', 'privacy/index.html']];
+var FIELD_SEL = 'h1,h2,h3,h4,p,li,summary,dt,dd,blockquote,figcaption,.btn-label,a,span,small,b';
+var TYPE_NAME = { H1: 'Main heading', H2: 'Heading', H3: 'Sub-heading', H4: 'Sub-heading', P: 'Paragraph', LI: 'List item', SUMMARY: 'Question', DT: 'Term', DD: 'Text', A: 'Link text', SPAN: 'Short text', SMALL: 'Small text', B: 'Label', BLOCKQUOTE: 'Quote', FIGCAPTION: 'Caption' };
+function b64dec(b) { var bin = atob(b.replace(/\n/g, '')), a = new Uint8Array(bin.length); for (var i = 0; i < bin.length; i++) a[i] = bin.charCodeAt(i); return new TextDecoder().decode(a); }
+function toEdit(html) { var t = document.createElement('div'); t.innerHTML = html.replace(/<em>/g, '\u0001').replace(/<\/em>/g, '\u0002'); return t.textContent.replace(/\u0001/g, '*').replace(/\u0002/g, '*'); }
+function fromEdit(txt) { var e = txt.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); return e.replace(/\*([^*]+)\*/g, '<em>$1</em>'); }
+function countOf(src, needle) { var n = 0, i = -1; while ((i = src.indexOf(needle, i + 1)) > -1) n++; return n; }
+function extractFields(src) {
+  var doc = new DOMParser().parseFromString(src, 'text/html'), main = doc.querySelector('main'), out = [], seen = {};
+  if (!main) return out;
+  var a = src.indexOf('<!--PROJECTS:START-->'), b = src.indexOf('<!--PROJECTS:END-->');
+  Array.prototype.forEach.call(main.querySelectorAll(FIELD_SEL), function (el) {
+    if (el.closest('form, svg, script, style, [aria-hidden="true"], .field, .legend, .proj')) return;
+    var kids = el.children, ok = true;
+    for (var i = 0; i < kids.length; i++) if (kids[i].tagName !== 'EM') ok = false;
+    if (!ok) return;
+    var html = el.innerHTML, text = toEdit(html);
+    if (text.trim().length < 3 || text.indexOf('*') > -1 || /\$\{|\{\{/.test(text)) return;
+    var tag = el.tagName.toLowerCase(), needle = '>' + html + '</' + tag;
+    if (countOf(src, needle) !== 1) return;
+    var pos = src.indexOf(needle); if (a > -1 && pos > a && pos < b) return;
+    if (seen[needle]) return; seen[needle] = 1;
+    var sec = el.closest('section'), h = sec && sec.querySelector('h1,h2'), label = h ? toEdit(h.innerHTML).slice(0, 60) : 'Page';
+    out.push({ needle: needle, tag: tag, text: text, orig: text, section: label, type: TYPE_NAME[el.tagName] || 'Text' });
+  });
+  return out;
+}
+function metaFields(src) {
+  var t = /<title>([\s\S]*?)<\/title>/.exec(src), d = /<meta name="description" content="([^"]*)"/.exec(src);
+  var un = function (x) { var e = document.createElement('div'); e.innerHTML = x; return e.textContent; };
+  return { title: t ? un(t[1]) : '', desc: d ? un(d[1]) : '' };
+}
+function escAttr(x) { return x.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+function applyMeta(src, title, desc) {
+  var rt = function (m) { return function (all, a, b) { return a + m + b; }; };
+  src = src.replace(/<title>[\s\S]*?<\/title>/, function () { return '<title>' + escAttr(title).replace(/&quot;/g, '"') + '</title>'; });
+  src = src.replace(/(<meta name="description" content=")[^"]*(")/, rt(escAttr(desc)));
+  ['og:title', 'twitter:title'].forEach(function (k) { src = src.replace(new RegExp('(<meta (?:property|name)="' + k + '" content=")[^"]*(")'), rt(escAttr(title))); });
+  ['og:description', 'twitter:description'].forEach(function (k) { src = src.replace(new RegExp('(<meta (?:property|name)="' + k + '" content=")[^"]*(")'), rt(escAttr(desc))); });
+  return src;
+}
+function viewPages(v) {
+  if (!S.pg) {
+    v.innerHTML = '<div class="card"><h2>Edit the text on your pages</h2><p class="muted">Choose a page. You can change headings, paragraphs, buttons and the Google title and description. Menus, footer, layout, design and the blog or project lists are not edited here.</p><div class="list">' + PAGES.map(function (p, i) { return '<div class="item"><b>' + p[0] + '</b><button class="btn ghost sm" data-pg="' + i + '">Edit text</button></div>'; }).join('') + '</div></div>';
+    v.querySelectorAll('[data-pg]').forEach(function (b) { b.onclick = function () { openPage(+b.getAttribute('data-pg')); }; });
+    return;
+  }
+  var g = S.pg;
+  if (g.loading) { v.innerHTML = '<div class="card">Loading the page...</div>'; return; }
+  var groups = {}, order = [];
+  g.fields.forEach(function (f, i) { if (!groups[f.section]) { groups[f.section] = []; order.push(f.section); } groups[f.section].push([f, i]); });
+  v.innerHTML = '<div class="card"><p><button class="btn ghost sm" id="back">All pages</button></p><h2>' + esc(g.name) + '</h2><p class="muted small">Put a word between stars to show it in the blue italic style, for example <code>grow your *business*</code>. Text that is repeated on the page or built by code is not listed.</p>'
+    + '<h3 style="margin-top:18px">Google search result</h3><label for="m-title">Page title ' + counter('c-mt') + '</label><input id="m-title" value="' + esc(g.meta.title) + '"><label for="m-desc">Description ' + counter('c-md') + '</label><textarea id="m-desc" style="min-height:80px">' + esc(g.meta.desc) + '</textarea></div>'
+    + order.map(function (sec) { return '<div class="card"><h3>' + esc(sec) + '</h3>' + groups[sec].map(function (x) { var f = x[0], id = 'pf-' + x[1]; return '<label for="' + id + '">' + f.type + '</label>' + (f.text.length > 80 ? '<textarea id="' + id + '" style="min-height:90px">' : '<input id="' + id + '" value="' + esc(f.text) + '">').replace(/$/, '') + (f.text.length > 80 ? esc(f.text) + '</textarea>' : ''); }).join('') + '</div>'; }).join('')
+    + '<div class="card"><p><button class="btn" id="save">Save changes</button> <button class="btn ghost" id="cancel">Cancel</button></p></div>';
+  var upd = function () { setCount('c-mt', $('#m-title').value.length, 30, 65); setCount('c-md', $('#m-desc').value.length, 110, 160); };
+  $('#m-title').addEventListener('input', upd); $('#m-desc').addEventListener('input', upd); upd();
+  $('#back').onclick = $('#cancel').onclick = function () { S.pg = null; setMsg(); go(); };
+  $('#save').onclick = savePage;
+}
+function openPage(i) {
+  S.pg = { loading: true, name: PAGES[i][0], path: PAGES[i][1] }; go();
+  gh('/repos/' + REPO + '/contents/' + PAGES[i][1] + '?ref=' + BRANCH).then(function (j) {
+    var src = b64dec(j.content); S.pg.src = src; S.pg.sha = j.sha; S.pg.fields = extractFields(src); S.pg.meta = metaFields(src); S.pg.loading = false; go();
+  }).catch(function (e) { S.pg = null; fail(e); });
+}
+function savePage() {
+  var g = S.pg, src = g.src, changed = 0, bad = [];
+  var title = $('#m-title').value.trim(), desc = $('#m-desc').value.trim();
+  if (!title || !desc) return flash('err', 'The page title and description cannot be empty.');
+  if (title !== g.meta.title || desc !== g.meta.desc) { src = applyMeta(src, title, desc); changed++; }
+  g.fields.forEach(function (f, i) {
+    var el = $('#pf-' + i), val = el ? el.value.replace(/\s+/g, ' ').trim() : f.orig;
+    if (val === f.orig) return;
+    if (val.length < 1) { bad.push(f.orig.slice(0, 30)); return; }
+    var needle = f.needle, to = '>' + fromEdit(val) + '</' + f.tag;
+    if (countOf(src, needle) !== 1) { bad.push(f.orig.slice(0, 30)); return; }
+    src = src.replace(needle, function () { return to; }); changed++;
+  });
+  if (bad.length) return flash('err', 'Could not save because these fields are empty or changed elsewhere: ' + esc(bad.join(', ')));
+  if (!changed) return flash('info', 'Nothing was changed.');
+  var btn = $('#save'); btn.disabled = true; btn.textContent = 'Saving...';
+  putFile(g.path, b64(src), 'Edit page text: ' + g.name, g.sha).then(function () { S.pg = null; setMsg('ok', 'Saved ' + esc(g.name) + '. It goes live in about 1 to 2 minutes.'); go(); }).catch(function (e) { btn.disabled = false; btn.textContent = 'Save changes'; fail(e); });
+}
+
 /* ---------- help ---------- */
 function viewHelp(v) {
   v.innerHTML = '<div class="card"><h2>How this admin works</h2><ol class="steps"><li>You write or change a post or project here and press <b>Save</b>.</li><li>The panel saves it in your GitHub site code. Nothing is stored on any other server, so there is no monthly cost.</li><li>A page builder runs automatically and creates the web pages, the blog list, the Our Work list and the sitemap.</li><li>About 2 to 3 minutes later the change is live on ansar.me.</li></ol></div>'
-    + '<div class="card"><h2>Good to know</h2><ul><li>Your changes are saved with full history on GitHub, so mistakes can be undone.</li><li>Drafts are never published and are not in the sitemap.</li><li>The token is saved in this browser only. If you lose it or it expires, create a new one the same way and log in again.</li><li>This page cannot show visitor numbers or lead details. Leads are in your Google Sheet and visitor data comes from Google Search Console or Analytics.</li><li>The text of the home page, service pages and About page is not edited here yet. Ask Claude to change those.</li></ul></div>';
+    + '<div class="card"><h2>Good to know</h2><ul><li>Your changes are saved with full history on GitHub, so mistakes can be undone.</li><li>Drafts are never published and are not in the sitemap.</li><li>The token is saved in this browser only. If you lose it or it expires, create a new one the same way and log in again.</li><li>This page cannot show visitor numbers or lead details. Leads are in your Google Sheet and visitor data comes from Google Search Console or Analytics.</li><li>Site pages: you can edit the text, Google title and description of each page. Layout, menus, footer, design and contact details are changed by asking Claude.</li></ul></div>';
 }
 
 render();
