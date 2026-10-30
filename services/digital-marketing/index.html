@@ -885,6 +885,7 @@ em{padding:.04em .09em .26em .05em;margin:0 -.04em;-webkit-box-decoration-break:
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#0A1B5C">
 <meta name="application-name" content="Ansar Marketing Services">
+<script>/* ga4 */window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-2Z4JTC85NW');(function(){var l=function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-2Z4JTC85NW';document.head.appendChild(s)};window.addEventListener('load',function(){if('requestIdleCallback'in window)requestIdleCallback(l,{timeout:3000});else setTimeout(l,1500)})})();document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var h=a.getAttribute('href')||'',n=null;if(h.indexOf('wa.me')>-1)n='click_whatsapp';else if(h.indexOf('tel:')===0)n='click_call';else if(h.indexOf('mailto:')===0)n='click_email';else if(/facebook\.com|instagram\.com|linkedin\.com/.test(h))n='click_social';else if(/^https?:/.test(h)&&h.indexOf(location.host)<0)n='click_portfolio_site';if(n)gtag('event',n,{link_url:h,page_path:location.pathname})},true)</script>
 </head>
 <body data-page="digital-marketing">
 <div class="progress" aria-hidden="true"><i></i></div>
@@ -1027,6 +1028,7 @@ document.addEventListener('submit', e => {
   const SHEET_URL = 'https://script.google.com/macros/s/AKfycbxRMeoldCNVG_h8wxor1rdBYvaB-Xw_2heTdGeDKcKm5nU5zou_56SnVAwgr4FR-e4/exec'; // paste your Google Apps Script web app URL between the quotes
   if (SHEET_URL) { try { fetch(SHEET_URL, { method: 'POST', mode: 'no-cors', keepalive: true, headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify({ name: val('c-name'), business: val('c-biz'), phone: val('c-phone'), email: val('c-email'), link: val('c-link'), service: val('c-service'), details: val('c-details'), type: form.dataset.kind === 'audit' ? 'Free audit' : 'Consultation', page: location.href }) }).catch(function () {}); } catch (err) {} }
 
+  try{gtag('event','generate_lead',{service:val('c-service'),form_type:form.dataset.kind==='audit'?'free_audit':'consultation'})}catch(err){}
   const waUrl = 'https://wa.me/' + form.dataset.wa + '?text=' + encodeURIComponent(text);
   const mailUrl = 'mailto:' + form.dataset.email + '?subject=' + encodeURIComponent((form.dataset.kind === 'audit' ? 'Free audit request: ' : 'Free consultation request: ') + val('c-service')) + '&body=' + encodeURIComponent(text);
   const btn = $('button[type="submit"]', form);
