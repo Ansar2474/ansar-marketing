@@ -52,6 +52,19 @@ pre.help{background:#0F1B45;color:#DCE6FF;padding:14px;border-radius:12px;overfl
 .login{max-width:520px;margin:6vh auto}
 ol.steps li{margin:8px 0}
 .thumb{width:84px;height:116px;object-fit:cover;object-position:top;border-radius:8px;border:1px solid var(--line)}
+
+/* ===== polish v2 ===== */
+:root{--wave:clamp(40px,6.2vw,96px);--wv:#F5F8FF;--wv2:#EAF1FF}
+em{padding:.04em .09em .26em .05em;margin:0 -.04em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.w{padding-bottom:.4em;margin-bottom:-.4em}
+.wi{padding-bottom:.34em;margin-bottom:-.34em}
+.hero{padding-bottom:calc(36px + var(--wave))}
+.page-hero{padding-bottom:calc(clamp(24px,3vw,44px) + var(--wave))}
+.hero::after,.page-hero::after,.footer::before{content:"";position:absolute;left:0;right:0;height:var(--wave);background:var(--wv);pointer-events:none;z-index:1;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:100% 100%;mask-size:100% 100%}
+.hero::after,.page-hero::after{bottom:-1px;-webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0 64C170 20 380 8 600 46S1040 106 1240 66C1330 48 1395 38 1440 42V100H0Z'/%3E%3C/svg%3E");mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0 64C170 20 380 8 600 46S1040 106 1240 66C1330 48 1395 38 1440 42V100H0Z'/%3E%3C/svg%3E")}
+.page-hero:has(+ .sec-tint)::after{background:var(--wv2)}
+.footer{padding-top:calc(var(--wave) + clamp(28px,4vw,52px))!important}
+.footer::before{top:-1px;-webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0 0H1440V40C1310 80 1110 98 890 60S450 4 250 42C140 62 70 72 0 62Z'/%3E%3C/svg%3E");mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0 0H1440V40C1310 80 1110 98 890 60S450 4 250 42C140 62 70 72 0 62Z'/%3E%3C/svg%3E")}
 </style>
 </head>
 <body>
