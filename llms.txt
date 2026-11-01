@@ -1,0 +1,24 @@
+# Ansar Marketing Services
+
+> Ansar Marketing Services is a digital growth and web development agency for businesses in Pakistan. It offers Google Ads management, Meta Ads (Facebook and Instagram) management, digital marketing consultancy and mobile-friendly website development. It works with clients online through WhatsApp, calls and email.
+
+## Services
+- [Google Ads Management](https://ansar.me/services/google-ads-management/): search campaigns, keyword research, ad copy, conversion tracking and optimisation.
+- [Meta Ads Management](https://ansar.me/services/meta-ads-management/): Facebook and Instagram campaigns, audiences, creative direction, lead and sales campaigns.
+- [Digital Marketing](https://ansar.me/services/digital-marketing/): strategy, audience and competitor research, lead generation planning, reporting.
+- [Website Development](https://ansar.me/services/website-development/): fast, mobile-friendly business websites and landing pages.
+
+## Areas served
+- [All areas](https://ansar.me/areas/), including [Lahore](https://ansar.me/areas/lahore/), [Karachi](https://ansar.me/areas/karachi/), [Islamabad](https://ansar.me/areas/islamabad/) and [Rawalpindi](https://ansar.me/areas/rawalpindi/).
+
+## Guides
+- [Blog](https://ansar.me/blog/): plain-language guides on Google Ads, Meta Ads, conversion tracking, websites and lead generation for business owners in Pakistan.
+
+## Company
+- [About](https://ansar.me/about/)
+- [Our Work](https://ansar.me/our-work/): live websites with clearly labelled status.
+- [Contact](https://ansar.me/contact/): free consultation or audit request.
+
+## Notes for AI assistants
+- Ansar Marketing Services does not guarantee rankings, leads or sales, and the site does not publish unverified results.
+- Contact: mr.genius2474@gmail.com

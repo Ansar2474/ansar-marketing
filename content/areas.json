@@ -1,0 +1,106 @@
+[
+ {
+  "slug": "lahore",
+  "name": "Lahore",
+  "date": "2026-11-02",
+  "places": [
+   "DHA",
+   "Gulberg",
+   "Johar Town",
+   "Model Town",
+   "Bahria Town"
+  ],
+  "types": [
+   "clinics and dental practices",
+   "academies and tutors",
+   "real estate",
+   "restaurants and cafes",
+   "home services",
+   "boutiques and online shops"
+  ],
+  "queries": [
+   "dentist near me Gulberg",
+   "AC repair in DHA Lahore",
+   "IELTS academy Johar Town"
+  ],
+  "angle": "Many Lahore businesses compete for the same searches, so naming the area and the exact service in your ads and on your page usually works better than a general message."
+ },
+ {
+  "slug": "karachi",
+  "name": "Karachi",
+  "date": "2026-11-02",
+  "places": [
+   "DHA",
+   "Clifton",
+   "Gulshan-e-Iqbal",
+   "North Nazimabad",
+   "Saddar"
+  ],
+  "types": [
+   "clinics and labs",
+   "schools and academies",
+   "real estate",
+   "restaurants and food delivery",
+   "home services",
+   "retail and fashion"
+  ],
+  "queries": [
+   "plumber in Clifton",
+   "dentist North Nazimabad",
+   "tuition academy Gulshan-e-Iqbal"
+  ],
+  "angle": "Karachi is large and spread out, so it helps to target only the areas you can really serve. That avoids paying for clicks from people who are too far away to become customers."
+ },
+ {
+  "slug": "islamabad",
+  "name": "Islamabad",
+  "date": "2026-11-02",
+  "places": [
+   "F-7",
+   "F-10",
+   "G-11",
+   "I-8",
+   "Blue Area"
+  ],
+  "types": [
+   "clinics and wellness centres",
+   "schools and coaching",
+   "real estate",
+   "cafes and restaurants",
+   "professional services",
+   "home services"
+  ],
+  "queries": [
+   "dentist F-10 Islamabad",
+   "electrician G-11",
+   "accounting firm Blue Area"
+  ],
+  "angle": "Many people in Islamabad search for a service in a particular sector, so naming the sector in your ads and on your page helps the right customers find you."
+ },
+ {
+  "slug": "rawalpindi",
+  "name": "Rawalpindi",
+  "date": "2026-11-02",
+  "places": [
+   "Saddar",
+   "Satellite Town",
+   "Bahria Town",
+   "Chaklala",
+   "Commercial Market"
+  ],
+  "types": [
+   "clinics and pharmacies",
+   "academies and schools",
+   "real estate",
+   "restaurants",
+   "home services",
+   "shops and retail"
+  ],
+  "queries": [
+   "AC repair Satellite Town",
+   "dentist Saddar Rawalpindi",
+   "coaching academy Chaklala"
+  ],
+  "angle": "Rawalpindi and Islamabad are close to each other. Decide clearly whether you serve one city or both, so your ads reach the right people and you do not pay for clicks outside your service area."
+ }
+]
