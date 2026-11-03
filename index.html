@@ -872,6 +872,37 @@ em{padding:.04em .09em .26em .05em;margin:0 -.04em;-webkit-box-decoration-break:
 .page-hero:has(+ .sec-tint)::after{background:var(--wv2)}
 .footer{padding-top:calc(var(--wave) + clamp(28px,4vw,52px))!important}
 .footer::before{top:-1px;-webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0 0H1440V40C1310 80 1110 98 890 60S450 4 250 42C140 62 70 72 0 62Z'/%3E%3C/svg%3E");mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0 0H1440V40C1310 80 1110 98 890 60S450 4 250 42C140 62 70 72 0 62Z'/%3E%3C/svg%3E")}
+/* polish v3: tighter spacing, never-faded text, readable CTA links */
+.sec{padding-block:clamp(40px,5.5vw,80px)}
+.sec-head{margin-bottom:clamp(22px,3.4vw,44px);gap:.8rem}
+.rv{opacity:.5;transform:translateY(16px);transition:opacity .5s ease var(--rd,0ms),transform .55s cubic-bezier(.2,.7,.2,1) var(--rd,0ms)}
+.rv.in{opacity:1;transform:none}
+@keyframes rise{from{opacity:.6;transform:translateY(14px)}}
+.rise{animation-duration:.6s}
+.post-cta .related a{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.5);color:#fff;transition:background .2s,color .2s,transform .25s}
+.post-cta .related a:last-child{background:#fff;color:#0A1A4A;border-color:#fff}
+.post-cta .related a:last-child:hover{background:#E6EFFF}
+.post-cta .related a:hover,.post-cta .related a:focus-visible{background:#fff;color:#0A1A4A;transform:translateY(-2px)}
+.related a.btn{display:inline-flex;padding:.6rem 1.15rem;min-height:0;width:auto}
+.sec-tint{border-block-width:0}
+@media (max-width:640px){
+body{font-size:16px;line-height:1.55}
+.sec{padding-block:28px}
+.sec[style*="padding-top:0"]{padding-top:0!important}
+.hero{padding-bottom:calc(var(--wave) + 20px)}
+.sec-head{margin-bottom:18px;gap:.65rem}
+.card{padding:18px;border-radius:18px}
+.lead{font-size:1rem;line-height:1.55}
+.h2{font-size:clamp(1.5rem,7vw,1.85rem);line-height:1.12}
+.cta .h2{font-size:clamp(1.65rem,7.6vw,2rem)}
+.hero .display{font-size:clamp(2.1rem,10vw,2.6rem)}
+.footer .foot nav li,.footer .foot li{margin-bottom:.6rem}
+.footer .foot nav li a{font-size:1rem}
+.foot h4{margin-bottom:.9rem}
+.foot-contact li.fc>svg{width:38px;height:38px;padding:9px}
+.footer .social a{width:44px;height:44px}
+.post-cta{padding:1.15rem}
+}
 </style>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
