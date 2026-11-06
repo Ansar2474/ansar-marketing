@@ -1,0 +1,96 @@
+{
+ "slug": "google-ads-in-ai-overviews-and-ai-mode-pakistan",
+ "date": "2026-11-06",
+ "updated": "2026-11-06",
+ "draft": false,
+ "title": "Google Ads in AI Overviews and AI Mode: What Pakistani Advertisers Should Know",
+ "desc": "Google lists Pakistan for ads inside AI Overviews and AI Mode, text ads only and in English. What that means and what you can control.",
+ "kw": "Google Ads AI Mode Pakistan",
+ "mins": 6,
+ "service": "google-ads-management",
+ "extra_service": "digital-marketing",
+ "answer": "Google's help page lists Pakistan among the countries where ads can appear inside AI Overviews and AI Mode, for text ads only and in English. You do not set up a separate campaign for this. Eligible Search, Shopping and Performance Max campaigns can take part automatically, and you cannot opt out of it separately.",
+ "body": [
+  [
+   "p",
+   "Last verified: 6 November 2026, against the Google Ads Help page listed under Sources. Google notes the country list may not be exhaustive and changes it over time."
+  ],
+  [
+   "h2",
+   "What are AI Overviews and AI Mode?"
+  ],
+  [
+   "p",
+   "AI Overviews are AI-written summaries shown on some Google Search results. AI Mode is a more conversational way to search, where people ask longer questions and follow-ups. Google is showing ads inside and alongside these experiences."
+  ],
+  [
+   "h2",
+   "What Google says about Pakistan"
+  ],
+  [
+   "ul",
+   [
+    "Pakistan is on the list of countries, for text ads only.",
+    "English is the supported language.",
+    "Search, Shopping and Performance Max campaigns are automatically eligible.",
+    "You do not need to create new campaigns or separate budgets."
+   ]
+  ],
+  [
+   "h2",
+   "What you can and cannot control"
+  ],
+  [
+   "ul",
+   [
+    "You cannot target ads only to AI Overviews or AI Mode.",
+    "You cannot opt out of these placements separately from Search.",
+    "You can still use negative keywords and brand exclusions to control when and how your ads show."
+   ]
+  ],
+  [
+   "h2",
+   "What this means in practice"
+  ],
+  [
+   "p",
+   "Your existing campaigns may already appear in these places if they are eligible and relevant. That makes the basics matter more: clear ad text in English, accurate landing pages, tidy negative keywords and conversion tracking that shows which clicks became enquiries."
+  ],
+  [
+   "h2",
+   "What we would not assume"
+  ],
+  [
+   "p",
+   "We would not assume that these placements bring more or cheaper clicks. Google has not given Pakistani advertisers a promised result, and this is a new area. Watch your own conversion data and judge it by enquiries, not by impressions."
+  ],
+  [
+   "src",
+   [
+    [
+     "About ads in AI-powered experiences in Google Search (Google Ads Help)",
+     "https://support.google.com/google-ads/answer/18826097?hl=en"
+    ]
+   ]
+  ]
+ ],
+ "faq": [
+  [
+   "Can I run a campaign only for AI Mode?",
+   "No. Google says you cannot target ads exclusively to AI Overviews or AI Mode."
+  ],
+  [
+   "Do I need Urdu ads for this?",
+   "Google lists English as the supported language for these placements. Urdu ads are a separate decision for normal Search campaigns."
+  ],
+  [
+   "Will my ads automatically show there?",
+   "Eligible campaigns can, but showing depends on relevance and the usual auction. Nothing is guaranteed."
+  ]
+ ],
+ "related": [
+  "what-is-google-ads-ai-max",
+  "conversion-tracking-google-ads-meta-ads",
+  "google-ads-vs-meta-ads-pakistan"
+ ]
+}

@@ -79,6 +79,8 @@ for (const p of posts) {
   for (const [kind, val] of p.body) {
     if (kind === 'h2') body += `<h2>${esc(val)}</h2>`;
     else if (kind === 'p') body += `<p>${esc(val)}</p>`;
+    else if (kind === 'ol') body += '<ol>' + val.map((x) => `<li>${esc(x)}</li>`).join('') + '</ol>';
+    else if (kind === 'src') body += '<h2>Sources</h2><ul class="src">' + val.map(([t, u]) => `<li><a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(t)}<span class="vh"> (opens in a new tab)</span></a></li>`).join('') + '</ul>';
     else body += '<ul>' + val.map((x) => `<li>${esc(x)}</li>`).join('') + '</ul>';
   }
   const faq = (p.faq || []).map(([q, a]) => `<div><h3>${esc(q)}</h3><p>${esc(a)}</p></div>`).join('');
@@ -208,7 +210,7 @@ for (const c of areas) {
 {
   const old = fs.existsSync(path.join(ROOT, 'sitemap.xml')) ? rd('sitemap.xml') : '';
   const prev = {}; for (const m of old.matchAll(/<loc>([^<]*)<\/loc>(?:<lastmod>([^<]*)<\/lastmod>)?/g)) prev[m[1]] = m[2];
-  const stat = ['', 'services/', 'services/google-ads-management/', 'services/meta-ads-management/', 'services/digital-marketing/', 'services/website-development/', 'about/', 'our-work/', 'contact/', 'blog/', 'areas/', ...areas.map((c) => 'areas/' + c.slug + '/')];
+  const stat = ['', 'services/', 'services/google-ads-management/', 'services/meta-ads-management/', 'services/digital-marketing/', 'services/website-development/', 'services/conversion-tracking/', 'about/', 'our-work/', 'contact/', 'blog/', 'areas/', ...areas.map((c) => 'areas/' + c.slug + '/')];
   const latest = posts.reduce((m, p) => ((p.updated || p.date) > m ? (p.updated || p.date) : m), '');
   const rows = stat.map((u) => [D + u, u === 'blog/' ? latest : (u.startsWith('areas/') ? '2026-11-02' : prev[D + u])]);
   for (const p of posts) rows.push([D + 'blog/' + p.slug + '/', p.updated || p.date]);

@@ -1,0 +1,116 @@
+{
+ "slug": "what-is-google-ads-ai-max",
+ "date": "2026-11-06",
+ "updated": "2026-11-06",
+ "draft": false,
+ "title": "What Is Google Ads AI Max? A Plain-English Guide",
+ "desc": "AI Max is an option inside Google Search campaigns that widens search matching and customises ads. What it does, what Google claims, and what to check first.",
+ "kw": "Google Ads AI Max",
+ "mins": 7,
+ "service": "google-ads-management",
+ "extra_service": "digital-marketing",
+ "answer": "AI Max is a set of features you can turn on inside a Google Search campaign. It widens which searches your ads match, can adjust ad text, and can send people to a more relevant page on your site. It is not a separate campaign type, and it works best when your conversion tracking is already accurate.",
+ "body": [
+  [
+   "p",
+   "Last verified: 6 November 2026, against Google Ads Help and Google's announcements listed under Sources. Google changes these features often, so check the linked pages before you act."
+  ],
+  [
+   "h2",
+   "What AI Max includes"
+  ],
+  [
+   "p",
+   "Google describes AI Max as targeting and creative enhancements for Search campaigns. It is activated within an existing Search campaign. Its three main features are:"
+  ],
+  [
+   "ul",
+   [
+    "Search term matching: Google can match your ads to relevant searches beyond the exact keywords you listed.",
+    "Text customisation: Google can adjust headlines and descriptions to suit the search.",
+    "Final URL expansion: Google can send a visitor to a different page on your site that fits the search better."
+   ]
+  ],
+  [
+   "h2",
+   "What Google says it delivers"
+  ],
+  [
+   "p",
+   "Google's help page states that advertisers who turn on AI Max in Search campaigns will typically see 14% more conversions at a similar cost per conversion or return on ad spend. Google gives this as its own internal 2025 data for non-retail advertisers. It does not publish the method, and \"typically\" is not a guarantee, so treat it as Google's claim, not a promise for your account."
+  ],
+  [
+   "h2",
+   "Why it matters for small businesses"
+  ],
+  [
+   "ul",
+   [
+    "Final URL expansion only helps if your site has clear, separate pages for each service. This is one more reason to keep one page per service.",
+    "Broader matching can bring irrelevant searches if negative keywords and tracking are weak.",
+    "Automatic text should be checked, because it can describe your service in a way you did not intend."
+   ]
+  ],
+  [
+   "h2",
+   "Dynamic Search Ads are being upgraded to AI Max"
+  ],
+  [
+   "p",
+   "Google announced that Dynamic Search Ads would be upgraded to AI Max. In a June 2026 update it said the Dynamic Search Ads upgrade would begin in February 2027, while upgrades for automatically created assets and campaign-level broad match continue from September 2026. If you use any of these, expect an upgrade prompt or notice in your account."
+  ],
+  [
+   "h2",
+   "What we would check before turning it on"
+  ],
+  [
+   "ol",
+   [
+    "Is conversion tracking recording real enquiries and not just visits?",
+    "Does each service have its own page that matches its ad?",
+    "Is there a negative keyword list, and have you read the recent search terms?",
+    "Can you test it? Google offers experiments that compare AI Max against your current setup before you apply it widely."
+   ]
+  ],
+  [
+   "h2",
+   "Our view"
+  ],
+  [
+   "p",
+   "This part is our opinion, not Google's. For a small account with little data, switching everything on at once makes it hard to learn what worked. Test on one campaign, watch the search terms and the real enquiries, and keep the rest as it is until you see a clear result."
+  ],
+  [
+   "src",
+   [
+    [
+     "About AI Max for Search campaigns (Google Ads Help)",
+     "https://support.google.com/google-ads/answer/15910366?hl=en"
+    ],
+    [
+     "Dynamic Search Ads are upgrading to AI Max (Google)",
+     "https://blog.google/products/ads-commerce/dsa-upgrade-to-ai-max-2026/"
+    ]
+   ]
+  ]
+ ],
+ "faq": [
+  [
+   "Is AI Max a new campaign type?",
+   "No. Google describes it as an option within Search campaigns."
+  ],
+  [
+   "Does AI Max guarantee more conversions?",
+   "No. Google says advertisers typically see more conversions, based on its own data, but results vary by account."
+  ],
+  [
+   "Do I have to use it?",
+   "Not today for every account, but some older features are being upgraded to it, so it is worth understanding."
+  ]
+ ],
+ "related": [
+  "conversion-tracking-google-ads-meta-ads",
+  "why-google-ads-get-clicks-but-no-enquiries",
+  "google-ads-in-ai-overviews-and-ai-mode-pakistan"
+ ]
+}

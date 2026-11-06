@@ -1,0 +1,88 @@
+{
+ "slug": "why-google-ads-get-clicks-but-no-enquiries",
+ "date": "2026-11-06",
+ "updated": "2026-11-06",
+ "draft": false,
+ "title": "Why Your Google Ads Get Clicks but No Enquiries",
+ "desc": "Getting clicks but no calls, forms or WhatsApp messages? Seven common causes in Google Ads accounts and how to check each one.",
+ "kw": "Google Ads clicks but no enquiries",
+ "mins": 6,
+ "service": "google-ads-management",
+ "extra_service": "website-development",
+ "answer": "Clicks without enquiries usually come from one of a few causes: tracking that is not set up, ads showing for the wrong searches, a landing page that does not match the ad, or slow replies to the enquiries you do get. Check these in order before spending more.",
+ "body": [
+  [
+   "h2",
+   "First, check that you can see enquiries at all"
+  ],
+  [
+   "p",
+   "Before blaming the ads, confirm that every form submission, WhatsApp click and phone call is recorded. If tracking is missing or broken, you may be getting enquiries that the account cannot show. Compare the numbers in Google Ads with the messages and calls you actually received in the same week."
+  ],
+  [
+   "h2",
+   "Seven common causes"
+  ],
+  [
+   "ol",
+   [
+    "Tracking is not set up or is counting the wrong action, such as page views instead of form submissions.",
+    "The ads show for searches that are not buying searches, such as jobs, free information or courses. The search terms report shows what people actually typed.",
+    "There are no negative keywords, so irrelevant searches keep using the budget.",
+    "The landing page does not match the ad. If the ad promises one service and the page talks about everything, visitors leave.",
+    "The page is slow or hard to use on a phone, where most visitors in Pakistan arrive.",
+    "The location, language or schedule settings reach people who cannot become customers, for example other cities you do not serve.",
+    "Enquiries arrive but are answered late. A lead who waits a day often contacts someone else."
+   ]
+  ],
+  [
+   "h2",
+   "How to check each one in about an hour"
+  ],
+  [
+   "ul",
+   [
+    "Open the search terms report and read the last 30 days. Add clearly irrelevant words as negative keywords.",
+    "Open your landing page on your own phone. Time how long until you can read the headline and tap the contact button.",
+    "Check that the headline of the page repeats what the ad promised.",
+    "Submit a test enquiry and confirm it appears as a conversion in Google Ads and in your leads list.",
+    "Check the campaign location settings against the cities you really serve."
+   ]
+  ],
+  [
+   "h2",
+   "When more budget is not the answer"
+  ],
+  [
+   "p",
+   "If the checks above show tracking gaps or poor search terms, a bigger budget only buys more of the same clicks. Fix the cause first, then decide on budget. A small, well-tracked campaign teaches you more than a large one you cannot measure."
+  ],
+  [
+   "h2",
+   "What a good fix looks like"
+  ],
+  [
+   "p",
+   "A good fix is specific: a clear list of what was wrong, what was changed and what you will watch over the next few weeks. Nobody can promise a number of leads, but a proper review should make it clear where your money was going."
+  ]
+ ],
+ "faq": [
+  [
+   "How long should I wait before judging a Google Ads campaign?",
+   "Long enough to collect meaningful data, usually several weeks for a small account. Judge it on tracked enquiries, not on clicks alone."
+  ],
+  [
+   "Are my ads being clicked by fake visitors?",
+   "Some invalid clicks happen, and Google filters many of them. Most wasted clicks, though, come from irrelevant search terms, which you can see and fix in the search terms report."
+  ],
+  [
+   "Should I pause the campaign while I fix things?",
+   "Not necessarily. Often you can fix tracking and negative keywords while the campaign keeps running, with a modest budget."
+  ]
+ ],
+ "related": [
+  "conversion-tracking-google-ads-meta-ads",
+  "website-checklist-before-running-ads",
+  "how-much-to-spend-on-google-ads-pakistan"
+ ]
+}

@@ -1,0 +1,81 @@
+{
+ "slug": "google-ads-account-audit-checklist",
+ "date": "2026-11-06",
+ "updated": "2026-11-06",
+ "draft": false,
+ "title": "Google Ads Account Audit: A 10-Point Checklist for Small Businesses",
+ "desc": "A practical checklist to review your own Google Ads account: tracking, search terms, ads, landing pages, location settings and budget.",
+ "kw": "Google Ads audit checklist",
+ "mins": 6,
+ "service": "google-ads-management",
+ "extra_service": "website-development",
+ "answer": "A Google Ads audit checks ten things: conversion tracking, goals, search terms, negative keywords, ad text, landing pages, location and language settings, schedule, budget and reporting. You can review most of them yourself in an hour, and a clear list of fixes matters more than a long report.",
+ "body": [
+  [
+   "h2",
+   "The 10-point checklist"
+  ],
+  [
+   "ol",
+   [
+    "Conversion tracking: is every form, WhatsApp click and call recorded? Send a test enquiry and confirm it appears.",
+    "Goals: is the campaign aimed at enquiries, not only clicks or visits?",
+    "Search terms: read the last 30 days. Are most searches from people who could become customers?",
+    "Negative keywords: are obvious bad searches, such as jobs, free, course or other cities, blocked?",
+    "Ad text: does each ad say clearly what you offer, where, and what to do next?",
+    "Landing page: does the page repeat the ad's promise, load quickly on a phone and make contact easy?",
+    "Locations: do the targeted areas match the places you really serve?",
+    "Language and schedule: do ads run in the language and at the hours that suit your customers and how fast you can reply?",
+    "Budget: is the daily budget enough to get meaningful data, and is it split sensibly across campaigns?",
+    "Reporting: can you see spend, enquiries and cost per enquiry in one place every month?"
+   ]
+  ],
+  [
+   "h2",
+   "Red flags"
+  ],
+  [
+   "ul",
+   [
+    "You cannot say how many enquiries came from ads.",
+    "The ad account is in someone else's name and you have no access.",
+    "Nobody can explain what was changed last month and why."
+   ]
+  ],
+  [
+   "h2",
+   "What to do with the results"
+  ],
+  [
+   "p",
+   "Sort the problems into three groups: things that stop you measuring results, things that waste budget, and things that improve results. Fix the first group first, because without measurement you cannot judge anything else."
+  ],
+  [
+   "h2",
+   "Want a second pair of eyes?"
+  ],
+  [
+   "p",
+   "If you would like us to review your account, ask for a free Google Ads audit. We will tell you what we find, and you are under no obligation to hire us."
+  ]
+ ],
+ "faq": [
+  [
+   "How often should I audit my account?",
+   "A quick check every month and a fuller review every quarter is a sensible rhythm for most small accounts."
+  ],
+  [
+   "Do I need access to Google Ads to do this?",
+   "Yes. You need access to your own ad account, ideally as the owner or an admin."
+  ],
+  [
+   "Can an audit promise better results?",
+   "No. It shows what is wasting money or hiding results, so you can fix it."
+  ]
+ ],
+ "related": [
+  "why-google-ads-get-clicks-but-no-enquiries",
+  "conversion-tracking-google-ads-meta-ads",
+  "how-to-choose-a-google-ads-expert-in-pakistan"
+ ]
+}
