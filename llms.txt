@@ -10,7 +10,7 @@
 - [Conversion Tracking](https://ansar.me/services/conversion-tracking/): Google Ads, GA4 and Meta tracking so you can see which ads bring enquiries, WhatsApp clicks and calls.
 
 ## Areas served
-- [All areas](https://ansar.me/areas/), including [Lahore](https://ansar.me/areas/lahore/), [Karachi](https://ansar.me/areas/karachi/), [Islamabad](https://ansar.me/areas/islamabad/) and [Rawalpindi](https://ansar.me/areas/rawalpindi/).
+- [All areas](https://ansar.me/areas/), including [UAE](https://ansar.me/areas/uae/), [USA](https://ansar.me/areas/usa/) and [Pakistan](https://ansar.me/areas/pakistan/)
 
 ## Guides
 - [Blog](https://ansar.me/blog/): plain-language guides on Google Ads, Meta Ads, conversion tracking, websites and lead generation for business owners in Pakistan.

@@ -1,106 +1,45 @@
 [
  {
-  "slug": "lahore",
-  "name": "Lahore",
-  "date": "2026-11-02",
-  "places": [
-   "DHA",
-   "Gulberg",
-   "Johar Town",
-   "Model Town",
-   "Bahria Town"
-  ],
-  "types": [
-   "clinics and dental practices",
-   "academies and tutors",
-   "real estate",
-   "restaurants and cafes",
-   "home services",
-   "boutiques and online shops"
-  ],
-  "queries": [
-   "dentist near me Gulberg",
-   "AC repair in DHA Lahore",
-   "IELTS academy Johar Town"
-  ],
-  "angle": "Many Lahore businesses compete for the same searches, so naming the area and the exact service in your ads and on your page usually works better than a general message."
+  "slug": "uae",
+  "name": "UAE",
+  "label": "the UAE",
+  "full": "United Arab Emirates",
+  "date": "2026-11-12",
+  "places": ["Dubai", "Abu Dhabi", "Sharjah", "Ajman"],
+  "types": ["real estate agencies", "clinics and dental practices", "restaurants and cafes", "home and maintenance services", "salons and beauty studios", "car rental and automotive", "online shops"],
+  "queries": ["dentist in Dubai Marina", "AC repair Sharjah", "villa cleaning Abu Dhabi"],
+  "angle": "People in the UAE come from many countries and search in English, Arabic and other languages, so the first job is to find out which language your customers actually use. We usually test English first, then add Arabic campaigns where search volume and your customers justify them.",
+  "local": ["Language: English is widely used in search, and Arabic matters for many audiences. Google Ads and Meta Ads can both target by language and by emirate or city.", "WhatsApp: WhatsApp is one of the most-used apps in the UAE, so a click-to-WhatsApp button on your ads and website is often worth testing next to a call button.", "Currency: show prices in AED and say clearly whether VAT is included.", "Time zone: the UAE is one hour behind Pakistan (UTC+4 compared with UTC+5), so meetings and reports are easy to schedule."],
+  "rules": ["Privacy: the UAE has a Personal Data Protection Law (PDPL). Collect contact details only with clear consent, keep a privacy policy on your website, and give people an easy way to opt out of messages.", "Claims: advertising claims should be accurate and provable. Avoid exaggerated promises.", "Influencers: the UAE Media Council has an Advertiser Permit for individuals who post advertising content on social media. If you plan to work with creators, ask them about it. Our service is paid ads and websites, not influencer marketing.", "Always confirm the rules for your industry (for example healthcare or real estate) with a licensed UAE adviser. We are not lawyers."],
+  "faq": [["Do you work with businesses in the UAE?", "Yes. Ansar Marketing Services is based in Pakistan and works online with businesses in the UAE through WhatsApp, calls, video meetings and email. We do not have a UAE office."], ["Can you run Google Ads in Arabic and English?", "We can plan campaigns in English and set up Arabic campaigns where your customers search in Arabic. For Arabic ad copy we recommend a native speaker checks the final text before launch."], ["Will my ads reach only Dubai or Abu Dhabi?", "You choose. Google Ads and Meta Ads can target the whole UAE, a single emirate, or a radius around your location."]]
  },
  {
-  "slug": "karachi",
-  "name": "Karachi",
-  "date": "2026-11-02",
-  "places": [
-   "DHA",
-   "Clifton",
-   "Gulshan-e-Iqbal",
-   "North Nazimabad",
-   "Saddar"
-  ],
-  "types": [
-   "clinics and labs",
-   "schools and academies",
-   "real estate",
-   "restaurants and food delivery",
-   "home services",
-   "retail and fashion"
-  ],
-  "queries": [
-   "plumber in Clifton",
-   "dentist North Nazimabad",
-   "tuition academy Gulshan-e-Iqbal"
-  ],
-  "angle": "Karachi is large and spread out, so it helps to target only the areas you can really serve. That avoids paying for clicks from people who are too far away to become customers."
+  "slug": "usa",
+  "name": "USA",
+  "label": "the United States",
+  "full": "United States",
+  "date": "2026-11-12",
+  "places": ["California", "Texas", "Florida", "New York"],
+  "types": ["home services such as plumbing, HVAC and roofing", "dental and medical practices", "real estate", "professional and legal services", "online shops", "software and B2B services"],
+  "queries": ["emergency plumber near me", "dentist accepting new patients", "roof repair in Austin TX"],
+  "angle": "Advertising in the United States is competitive and clicks can cost much more than in other markets. That makes tracking and a clear offer even more important, because every click needs a good chance of becoming an enquiry.",
+  "local": ["Costs: according to WordStream's 2026 benchmarks for US search campaigns, the median cost per click was $5.42 and the median cost per lead was $66.69. Costs are higher in some industries, for example $8.33 per click for home improvement and $8.00 for dental services. Your own numbers will differ.", "Local intent: many US searches are \"near me\" searches, so a Google Business Profile, accurate service areas and location-specific landing pages matter.", "Currency: show prices in USD and state your service area clearly.", "Time zone: Pakistan is about 9 to 10 hours ahead of US Eastern time and 12 to 13 hours ahead of Pacific time, so we agree meeting times and reporting days in advance and rely on written updates."],
+  "rules": ["Privacy: California and some other states have privacy laws such as the CCPA. Keep a clear privacy policy and honour opt-out requests.", "Calls and texts: marketing calls and text messages in the US are covered by the TCPA, so get clear consent before contacting people this way.", "Email: follow the CAN-SPAM rules, including a working unsubscribe link.", "Reviews and endorsements: the FTC expects testimonials to be real and clearly disclosed. Never publish fake reviews.", "Always confirm the rules for your industry and state with a US adviser. We are not lawyers."],
+  "faq": [["Do you work with businesses in the United States?", "Yes. Ansar Marketing Services is based in Pakistan and works online with businesses in the United States through email, calls and video meetings. We do not have a US office."], ["Is Google Ads more expensive in the US?", "Usually yes. WordStream's 2026 benchmarks put the median US search cost per click at $5.42, with higher figures in some industries. That is why conversion tracking and a focused budget matter."], ["How do you handle the time difference?", "We agree meeting times in advance, send written plans and reports, and keep campaign monitoring on a regular schedule so you are not waiting for answers."]],
+  "sources": [["WordStream, 2026 Google Ads and Microsoft Ads benchmarks (summary by PPC Land)", "https://ppc.land/google-ads-cpl-drops-for-first-time-since-2020-as-cpc-hits-5-42/"]]
  },
  {
-  "slug": "islamabad",
-  "name": "Islamabad",
-  "date": "2026-11-02",
-  "places": [
-   "F-7",
-   "F-10",
-   "G-11",
-   "I-8",
-   "Blue Area"
-  ],
-  "types": [
-   "clinics and wellness centres",
-   "schools and coaching",
-   "real estate",
-   "cafes and restaurants",
-   "professional services",
-   "home services"
-  ],
-  "queries": [
-   "dentist F-10 Islamabad",
-   "electrician G-11",
-   "accounting firm Blue Area"
-  ],
-  "angle": "Many people in Islamabad search for a service in a particular sector, so naming the sector in your ads and on your page helps the right customers find you."
- },
- {
-  "slug": "rawalpindi",
-  "name": "Rawalpindi",
-  "date": "2026-11-02",
-  "places": [
-   "Saddar",
-   "Satellite Town",
-   "Bahria Town",
-   "Chaklala",
-   "Commercial Market"
-  ],
-  "types": [
-   "clinics and pharmacies",
-   "academies and schools",
-   "real estate",
-   "restaurants",
-   "home services",
-   "shops and retail"
-  ],
-  "queries": [
-   "AC repair Satellite Town",
-   "dentist Saddar Rawalpindi",
-   "coaching academy Chaklala"
-  ],
-  "angle": "Rawalpindi and Islamabad are close to each other. Decide clearly whether you serve one city or both, so your ads reach the right people and you do not pay for clicks outside your service area."
+  "slug": "pakistan",
+  "name": "Pakistan",
+  "label": "Pakistan",
+  "full": "Pakistan",
+  "date": "2026-11-12",
+  "places": ["Lahore", "Karachi", "Islamabad", "Rawalpindi"],
+  "types": ["clinics and dental practices", "academies and tutors", "real estate", "restaurants and cafes", "home services", "boutiques and online shops"],
+  "queries": ["dentist near me Gulberg", "plumber in Clifton", "IELTS academy Islamabad"],
+  "angle": "Many Pakistani businesses compete for the same searches in big cities, so naming the area and the exact service in your ads and on your page usually works better than a general message.",
+  "local": ["Language: many people search in English, and some use Urdu or Roman Urdu. We research the real search terms before writing ads.", "WhatsApp and calls: in Pakistan many customers prefer to call or message first, so these actions are often the main goal of a campaign.", "Currency: show prices in PKR and keep them simple and clear.", "Mobile first: most visitors arrive on a phone, often on mobile data, so fast pages matter."],
+  "rules": ["Claims: keep advertising claims honest and provable, and follow the ad policies of Google and Meta for your industry.", "Privacy: keep a short privacy policy on your website and ask before sending marketing messages."],
+  "faq": [["Do you work with businesses in Pakistan?", "Yes. Pakistan is our home market. We work with businesses in Lahore, Karachi, Islamabad, Rawalpindi and other cities online, through WhatsApp, calls and email."], ["How much should a Pakistani business spend on Google Ads?", "There is no single right number. It depends on your service, your competition and how many enquiries you need. Start with a budget you can test with, then adjust using real results. Our guide to Google Ads budgets explains how."]]
  }
 ]
