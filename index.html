@@ -989,6 +989,39 @@ body{font-size:16px;line-height:1.55}
 .m-exp .ico{width:22px;height:22px;transition:transform .25s}
 .m-exp[aria-expanded="true"] .ico{transform:rotate(180deg)}
 .mobile-panel .m-sub[hidden]{display:none}
+/* v7 hero growth flow */
+.gf{position:relative;width:100%;aspect-ratio:1/1;container-type:inline-size;--u:calc(100cqw/560)}
+.gf-glow{position:absolute;inset:6%;border-radius:50%;background:radial-gradient(circle,rgba(56,213,242,.30),rgba(23,53,127,0) 66%);filter:blur(8px);animation:gfglow 6s ease-in-out infinite alternate}
+@keyframes gfglow{to{transform:scale(1.08);opacity:.75}}
+.gf-links{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.gf-links path{fill:none;stroke:rgba(180,215,255,.45);stroke-width:1.5;stroke-dasharray:3 6}
+.gf-links circle{fill:#7DD3FC;filter:drop-shadow(0 0 6px #38D5F2)}
+.gf-card{position:absolute;left:12%;right:12%;top:25%;padding:calc(var(--u)*18);border:1px solid rgba(255,255,255,.28);border-radius:calc(var(--u)*22);background:linear-gradient(160deg,rgba(255,255,255,.16),rgba(255,255,255,.05));box-shadow:0 30px 60px -28px rgba(0,8,50,.9),inset 0 1px 0 rgba(255,255,255,.25);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);display:grid;gap:calc(var(--u)*12);color:#fff}
+.gf-top{display:flex;align-items:center;gap:calc(var(--u)*10)}
+.gf-top b{font:600 max(10px,calc(var(--u)*13))/1 var(--font-body);letter-spacing:.02em;flex:1}
+.gf-top em{font:600 max(8px,calc(var(--u)*10))/1 var(--font-mono);font-style:normal;letter-spacing:.1em;text-transform:uppercase;padding:.45em .8em;border-radius:99px;background:rgba(255,217,120,.16);color:#FFD978;border:1px solid rgba(255,217,120,.4)}
+.gf-dots{display:flex;gap:calc(var(--u)*5)}.gf-dots i{width:calc(var(--u)*8);height:calc(var(--u)*8);border-radius:50%;background:rgba(255,255,255,.35)}
+.gf-chart{width:100%;height:calc(var(--u)*150);overflow:visible}
+.gf-grid{fill:none;stroke:rgba(255,255,255,.14);stroke-width:1;vector-effect:non-scaling-stroke;stroke-dasharray:2 5}
+.gf-line{fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;vector-effect:non-scaling-stroke;filter:drop-shadow(0 0 5px rgba(56,213,242,.7))}
+.gf-rows{display:grid;gap:calc(var(--u)*9)}
+.gf-rows li{display:grid;grid-template-columns:calc(var(--u)*78) 1fr;align-items:center;gap:calc(var(--u)*10);font:500 max(9px,calc(var(--u)*11))/1 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:#D3DEFA}
+.gf-rows i{display:block;height:calc(var(--u)*7);border-radius:99px;background:linear-gradient(90deg,#38D5F2,#FFD978);transform-origin:left;transform:scaleX(0);animation:gffill 7s ease-in-out infinite}
+.gf-rows li{position:relative}.gf-rows li::after{content:"";position:absolute;right:0;left:calc(var(--u)*88);height:calc(var(--u)*7);border-radius:99px;background:rgba(255,255,255,.1);z-index:0}
+.gf-rows i{position:relative;z-index:1;width:calc(var(--w)*100%)}
+@keyframes gffill{0%,5%{transform:scaleX(0)}38%,90%{transform:scaleX(1)}100%{transform:scaleX(0)}}
+.gf-chip{position:absolute;display:flex;align-items:center;gap:calc(var(--u)*9);padding:calc(var(--u)*9) calc(var(--u)*15) calc(var(--u)*9) calc(var(--u)*9);border-radius:99px;background:#fff;color:#0A1A4A;box-shadow:0 18px 34px -16px rgba(0,8,50,.7);animation:gffl 6s ease-in-out infinite alternate}
+.gf-chip b{font:600 max(10px,calc(var(--u)*13))/1 var(--font-body)}
+.gf-ic{display:grid;place-items:center;width:calc(var(--u)*30);height:calc(var(--u)*30);border-radius:50%;background:#EEF3FF}
+.gf-ic .ico{width:62%;height:62%;color:#17357F}
+.c1{left:2%;top:7%}.c2{right:1%;top:8%;animation-delay:-2s;animation-duration:7s}.c3{left:4%;bottom:7%;animation-delay:-4s;animation-duration:6.6s}
+@keyframes gffl{from{transform:translateY(calc(var(--u)*-6))}to{transform:translateY(calc(var(--u)*6))}}
+.gf-toast{position:absolute;right:3%;bottom:6%;display:flex;align-items:center;gap:calc(var(--u)*10);padding:calc(var(--u)*11) calc(var(--u)*16) calc(var(--u)*11) calc(var(--u)*11);border-radius:calc(var(--u)*16);background:#fff;color:#0A1A4A;box-shadow:0 22px 40px -16px rgba(0,8,50,.8),0 0 0 calc(var(--u)*5) rgba(56,213,242,.18);animation:gftoast 7s ease-in-out infinite}
+.gf-toast b{display:block;font:600 max(10px,calc(var(--u)*13))/1.2 var(--font-body)}
+.gf-toast small{display:block;font:500 max(8px,calc(var(--u)*10))/1.3 var(--font-mono);color:#5A6C95}
+.gf-tk{display:grid;place-items:center;width:calc(var(--u)*28);height:calc(var(--u)*28);border-radius:50%;background:#12A66A;color:#fff}.gf-tk .ico{width:60%;height:60%;stroke-width:2.6}
+@keyframes gftoast{0%,50%{opacity:0;transform:translateY(16px) scale(.94)}60%,88%{opacity:1;transform:none}98%,100%{opacity:0;transform:translateY(-8px)}}
+@media (prefers-reduced-motion:reduce){.gf *{animation:none!important}.gf-toast{opacity:1}.gf-rows i{transform:none}}
 </style>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -1043,30 +1076,24 @@ if(e&&s){e.addEventListener("click",function(){var o=e.getAttribute("aria-expand
     </div>
     <div class="stage-col rise" style="--i:3">
       <div class="stage-wrap">
-        <div class="stage" id="stage" role="img" aria-label="Illustrative graphic: Google Ads, Meta Ads, website and analytics channels feed one business, which receives new enquiries.">
-          <canvas class="stage-canvas" id="stage-canvas"></canvas>
-          <div class="ch ch-g" style="--d:18"><div class="ch-in fl1">
-            <div class="ch-h"><svg class="ico brand " viewBox="0 0 24 24" aria-hidden="true" style="color:#4285F4"><path d="M3.9998 22.9291C1.7908 22.9291 0 21.1383 0 18.9293s1.7908-3.9998 3.9998-3.9998 3.9998 1.7908 3.9998 3.9998-1.7908 3.9998-3.9998 3.9998zm19.4643-6.0004L15.4632 3.072C14.3586 1.1587 11.9121.5028 9.9988 1.6074S7.4295 5.1585 8.5341 7.0718l8.0009 13.8567c1.1046 1.9133 3.5511 2.5679 5.4644 1.4646 1.9134-1.1046 2.568-3.5511 1.4647-5.4644zM7.5137 4.8438L1.5645 15.1484A4.5 4.5 0 0 1 4 14.4297c2.5597-.0075 4.6248 2.1585 4.4941 4.7148l3.2168-5.5723-3.6094-6.25c-.4499-.7793-.6322-1.6394-.5878-2.4784z"/></svg><span>Google Ads</span></div>
-            <div class="sbar"><span id="typed">dental clinic near me</span><i class="caret"></i></div>
-            <div class="res ad"><b class="adtag">Ad</b><i class="sk sk-blue"></i><i class="sk"></i><i class="sk short"></i></div>
-            <div class="res"><i class="sk sk-dim"></i><i class="sk sk-dim short"></i></div>
-          </div></div>
-          <div class="ch ch-m" style="--d:28"><div class="ch-in fl2">
-            <div class="ch-h"><svg class="ico brand " viewBox="0 0 24 24" aria-hidden="true" style="color:#0467DF"><path d="M6.915 4.03c-1.968 0-3.683 1.28-4.871 3.113C.704 9.208 0 11.883 0 14.449c0 .706.07 1.369.21 1.973a6.624 6.624 0 0 0 .265.86 5.297 5.297 0 0 0 .371.761c.696 1.159 1.818 1.927 3.593 1.927 1.497 0 2.633-.671 3.965-2.444.76-1.012 1.144-1.626 2.663-4.32l.756-1.339.186-.325c.061.1.121.196.183.3l2.152 3.595c.724 1.21 1.665 2.556 2.47 3.314 1.046.987 1.992 1.22 3.06 1.22 1.075 0 1.876-.355 2.455-.843a3.743 3.743 0 0 0 .81-.973c.542-.939.861-2.127.861-3.745 0-2.72-.681-5.357-2.084-7.45-1.282-1.912-2.957-2.93-4.716-2.93-1.047 0-2.088.467-3.053 1.308-.652.57-1.257 1.29-1.82 2.05-.69-.875-1.335-1.547-1.958-2.056-1.182-.966-2.315-1.303-3.454-1.303zm10.16 2.053c1.147 0 2.188.758 2.992 1.999 1.132 1.748 1.647 4.195 1.647 6.4 0 1.548-.368 2.9-1.839 2.9-.58 0-1.027-.23-1.664-1.004-.496-.601-1.343-1.878-2.832-4.358l-.617-1.028a44.908 44.908 0 0 0-1.255-1.98c.07-.109.141-.224.211-.327 1.12-1.667 2.118-2.602 3.358-2.602zm-10.201.553c1.265 0 2.058.791 2.675 1.446.307.327.737.871 1.234 1.579l-1.02 1.566c-.757 1.163-1.882 3.017-2.837 4.338-1.191 1.649-1.81 1.817-2.486 1.817-.524 0-1.038-.237-1.383-.794-.263-.426-.464-1.13-.464-2.046 0-2.221.63-4.535 1.66-6.088.454-.687.964-1.226 1.533-1.533a2.264 2.264 0 0 1 1.088-.285z"/></svg><span>Meta Ads</span></div>
-            <div class="post"><i class="av"></i><span class="lines"><i class="sk"></i><i class="sk short"></i></span></div>
-            <div class="mimg"><svg viewBox="0 0 120 56" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="m6 48 26-24 20 16 24-26 36 34" vector-effect="non-scaling-stroke"/></svg><i class="sun"></i></div>
-            <div class="act"><span class="learn">Learn more</span><svg class="heart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.4A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></div>
-          </div></div>
-          <div class="ch ch-w" style="--d:12"><div class="ch-in fl3">
-            <div class="ch-h"><svg class="ico " viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="2.5"/><path d="M3.5 9.5h17M7 7.3h.01M9.5 7.3h.01"/></svg><span>Website</span></div>
-            <div class="wp"><i class="sk"></i><i class="sk"></i><span class="wbtn">Enquire now</span><svg class="cursor" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 8-6 2-3 6z"/></svg></div>
-          </div></div>
-          <div class="ch ch-a" style="--d:22"><div class="ch-in fl4">
-            <div class="ch-h"><svg class="ico " viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5"/><path d="M4 19h16"/><path d="m8 14 3-3 3 2 5-6"/></svg><span>Analytics</span></div>
-            <div class="bars"><i style="--h:38%;--k:0"></i><i style="--h:56%;--k:1"></i><i style="--h:44%;--k:2"></i><i style="--h:70%;--k:3"></i><i style="--h:62%;--k:4"></i><i style="--h:86%;--k:5"></i><i style="--h:100%;--k:6"></i></div>
-            <svg class="spark" viewBox="0 0 120 24" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M2 19 C 18 18, 24 11, 42 13 S 72 6, 88 5 S 108 3, 118 2"/></svg>
-          </div></div>
-          <div class="toast"><span class="tk"><svg class="ico " viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><span><b>New enquiry</b><small>Concept preview</small></span></div>
+        <div class="gf" id="gf" role="img" aria-label="Illustrative graphic: Google Ads, Meta Ads and a website feed a growth dashboard that ends in a new enquiry. Visual concept only.">
+          <span class="gf-glow" aria-hidden="true"></span>
+          <svg class="gf-links" viewBox="0 0 560 560" aria-hidden="true"><path d="M104 108C150 150 170 190 200 230"/><path d="M456 112C410 150 390 190 360 230"/><path d="M110 460C150 420 175 390 205 350"/><circle r="4"><animateMotion dur="3.6s" repeatCount="indefinite" path="M104 108C150 150 170 190 200 230"/></circle><circle r="4"><animateMotion dur="3.6s" begin="-1.2s" repeatCount="indefinite" path="M456 112C410 150 390 190 360 230"/></circle><circle r="4"><animateMotion dur="3.6s" begin="-2.4s" repeatCount="indefinite" path="M110 460C150 420 175 390 205 350"/></circle></svg>
+          <div class="gf-chip c1"><span class="gf-ic"><svg class="ico brand " viewBox="0 0 24 24" aria-hidden="true" style="color:#4285F4"><path d="M3.9998 22.9291C1.7908 22.9291 0 21.1383 0 18.9293s1.7908-3.9998 3.9998-3.9998 3.9998 1.7908 3.9998 3.9998-1.7908 3.9998-3.9998 3.9998zm19.4643-6.0004L15.4632 3.072C14.3586 1.1587 11.9121.5028 9.9988 1.6074S7.4295 5.1585 8.5341 7.0718l8.0009 13.8567c1.1046 1.9133 3.5511 2.5679 5.4644 1.4646 1.9134-1.1046 2.568-3.5511 1.4647-5.4644zM7.5137 4.8438L1.5645 15.1484A4.5 4.5 0 0 1 4 14.4297c2.5597-.0075 4.6248 2.1585 4.4941 4.7148l3.2168-5.5723-3.6094-6.25c-.4499-.7793-.6322-1.6394-.5878-2.4784z"/></svg></span><b>Google Ads</b></div>
+          <div class="gf-chip c2"><span class="gf-ic"><svg class="ico brand " viewBox="0 0 24 24" aria-hidden="true" style="color:#0467DF"><path d="M6.915 4.03c-1.968 0-3.683 1.28-4.871 3.113C.704 9.208 0 11.883 0 14.449c0 .706.07 1.369.21 1.973a6.624 6.624 0 0 0 .265.86 5.297 5.297 0 0 0 .371.761c.696 1.159 1.818 1.927 3.593 1.927 1.497 0 2.633-.671 3.965-2.444.76-1.012 1.144-1.626 2.663-4.32l.756-1.339.186-.325c.061.1.121.196.183.3l2.152 3.595c.724 1.21 1.665 2.556 2.47 3.314 1.046.987 1.992 1.22 3.06 1.22 1.075 0 1.876-.355 2.455-.843a3.743 3.743 0 0 0 .81-.973c.542-.939.861-2.127.861-3.745 0-2.72-.681-5.357-2.084-7.45-1.282-1.912-2.957-2.93-4.716-2.93-1.047 0-2.088.467-3.053 1.308-.652.57-1.257 1.29-1.82 2.05-.69-.875-1.335-1.547-1.958-2.056-1.182-.966-2.315-1.303-3.454-1.303zm10.16 2.053c1.147 0 2.188.758 2.992 1.999 1.132 1.748 1.647 4.195 1.647 6.4 0 1.548-.368 2.9-1.839 2.9-.58 0-1.027-.23-1.664-1.004-.496-.601-1.343-1.878-2.832-4.358l-.617-1.028a44.908 44.908 0 0 0-1.255-1.98c.07-.109.141-.224.211-.327 1.12-1.667 2.118-2.602 3.358-2.602zm-10.201.553c1.265 0 2.058.791 2.675 1.446.307.327.737.871 1.234 1.579l-1.02 1.566c-.757 1.163-1.882 3.017-2.837 4.338-1.191 1.649-1.81 1.817-2.486 1.817-.524 0-1.038-.237-1.383-.794-.263-.426-.464-1.13-.464-2.046 0-2.221.63-4.535 1.66-6.088.454-.687.964-1.226 1.533-1.533a2.264 2.264 0 0 1 1.088-.285z"/></svg></span><b>Meta Ads</b></div>
+          <div class="gf-chip c3"><span class="gf-ic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="2.5"/><path d="M3.5 9.5h17"/></svg></span><b>Website</b></div>
+          <div class="gf-card">
+            <div class="gf-top"><span class="gf-dots"><i></i><i></i><i></i></span><b>Growth overview</b><em>Concept</em></div>
+            <svg class="gf-chart" viewBox="0 0 300 120" preserveAspectRatio="none" aria-hidden="true">
+              <defs><linearGradient id="gfa" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#38D5F2" stop-opacity=".45"/><stop offset="1" stop-color="#38D5F2" stop-opacity="0"/></linearGradient><linearGradient id="gfl" x1="0" x2="1"><stop offset="0" stop-color="#7DD3FC"/><stop offset="1" stop-color="#FFD978"/></linearGradient></defs>
+              <path class="gf-grid" d="M0 30H300M0 60H300M0 90H300"/>
+              <path d="M0 98C30 94 45 80 70 82S110 70 135 56S185 60 210 38S260 26 300 8V120H0Z" fill="url(#gfa)"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;.15;.6;.9;1" dur="7s" repeatCount="indefinite"/></path>
+              <path class="gf-line" d="M0 98C30 94 45 80 70 82S110 70 135 56S185 60 210 38S260 26 300 8" pathLength="1" stroke="url(#gfl)"><animate attributeName="stroke-dashoffset" values="1;0;0;0" keyTimes="0;.55;.9;1" dur="7s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;1;0" keyTimes="0;.55;.9;1" dur="7s" repeatCount="indefinite"/></path>
+              <circle r="5" fill="#FFD978"><animateMotion dur="7s" repeatCount="indefinite" keyPoints="0;1;1" keyTimes="0;.55;1" calcMode="linear" path="M0 98C30 94 45 80 70 82S110 70 135 56S185 60 210 38S260 26 300 8"/><animate attributeName="opacity" values="1;1;1;0" keyTimes="0;.55;.9;1" dur="7s" repeatCount="indefinite"/></circle>
+            </svg>
+            <ul class="gf-rows"><li><span>Searches</span><i style="--w:.92"></i></li><li><span>Clicks</span><i style="--w:.7;animation-delay:.5s"></i></li><li><span>Enquiries</span><i style="--w:.52;animation-delay:1s"></i></li></ul>
+          </div>
+          <div class="gf-toast"><span class="gf-tk"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span><span><b>New enquiry</b><small>Concept preview</small></span></div>
         </div>
       </div>
       <p class="concept-tag"><span class="dot"></span>Visual concept. Illustrative only, not real results.</p>
