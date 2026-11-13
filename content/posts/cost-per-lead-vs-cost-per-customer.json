@@ -1,106 +1,107 @@
 {
- "slug": "cost-per-lead-vs-cost-per-customer",
- "date": "2026-11-06",
- "updated": "2026-11-06",
- "draft": false,
- "title": "Cost per Lead vs Cost per Customer: Which Number Should You Track?",
- "desc": "A cheap lead is not always a good one. Learn why cost per customer matters more than cost per lead, with a simple worked example in rupees.",
- "kw": "cost per lead vs cost per customer",
- "mins": 6,
- "service": "google-ads-management",
- "extra_service": "conversion-tracking",
- "answer": "Cost per lead is what you pay for each enquiry. Cost per customer is what you pay for each person who actually buys. A campaign with cheap leads can still be the more expensive one if few of those leads become customers, so track both.",
- "body": [
-  [
-   "h2",
-   "The two numbers"
-  ],
-  [
-   "ul",
-   [
-    "Cost per lead: advertising spend divided by the number of enquiries.",
-    "Cost per customer: advertising spend divided by the number of customers who actually bought."
-   ]
-  ],
-  [
-   "h2",
-   "A worked example (made-up numbers)"
-  ],
-  [
-   "p",
-   "These figures are an illustration only. They are not real client results. Suppose two campaigns each spend Rs 100,000."
-  ],
-  [
-   "ul",
-   [
-    "Campaign A: 50 leads, so Rs 2,000 per lead. Two of them become customers, so Rs 50,000 per customer.",
-    "Campaign B: 20 leads, so Rs 5,000 per lead. Eight of them become customers, so Rs 12,500 per customer."
-   ]
-  ],
-  [
-   "p",
-   "Campaign A looks cheaper if you only look at leads. Campaign B brings customers at a quarter of the cost. The better campaign is the one with the lower cost per customer, as long as the margin on each sale supports it."
-  ],
-  [
-   "h2",
-   "Why this gets missed"
-  ],
-  [
-   "p",
-   "Google Ads and Meta Ads report leads easily because the form submission happens on your website. What happens afterwards, such as a call, a quotation or a sale, usually happens by WhatsApp, phone or in person, so the ad platform never sees it."
-  ],
-  [
-   "h2",
-   "How to start tracking customers"
-  ],
-  [
-   "ol",
-   [
-    "Keep a simple list of every enquiry with its source, such as Google Ads, Meta Ads or direct.",
-    "Mark each lead as qualified, quoted or sold, and note the sale value.",
-    "Every month, divide spend by qualified leads and by customers.",
-    "Use these numbers, not clicks, to decide which campaign gets more budget."
-   ]
-  ],
-  [
-   "h2",
-   "Sending results back to Google"
-  ],
-  [
-   "p",
-   "Google describes enhanced conversions for leads as an upgraded version of offline conversion import that uses user-provided data such as email addresses. In short, when a lead later becomes a customer, you can send that result back so Google learns which clicks led to real business. It needs the Google tag or Google Tag Manager on your site and a way to import the results, so it suits businesses with enough enquiries and a tidy customer list."
-  ],
-  [
-   "p",
-   "Last verified: 6 November 2026, against the Google Ads Help page below."
-  ],
-  [
-   "src",
-   [
+  "slug": "cost-per-lead-vs-cost-per-customer",
+  "date": "2026-11-06",
+  "updated": "2026-11-06",
+  "draft": false,
+  "title": "Cost per Lead vs Cost per Customer: Which Number Should You Track?",
+  "desc": "A cheap lead is not always a good one. Learn why cost per customer matters more than cost per lead, with a simple worked example in rupees.",
+  "kw": "cost per lead vs cost per customer",
+  "mins": 6,
+  "service": "google-ads-management",
+  "extra_service": "conversion-tracking",
+  "answer": "Cost per lead is what you pay for each enquiry. Cost per customer is what you pay for each person who actually buys. A campaign with cheap leads can still be the more expensive one if few of those leads become customers, so track both.",
+  "body": [
     [
-     "About enhanced conversions for leads (Google Ads Help)",
-     "https://support.google.com/google-ads/answer/15713840?hl=en"
+      "h2",
+      "The two numbers"
+    ],
+    [
+      "ul",
+      [
+        "Cost per lead: advertising spend divided by the number of enquiries.",
+        "Cost per customer: advertising spend divided by the number of customers who actually bought."
+      ]
+    ],
+    [
+      "h2",
+      "A worked example (made-up numbers)"
+    ],
+    [
+      "p",
+      "These figures are an illustration only. They are not real client results. Suppose two campaigns each spend Rs 100,000."
+    ],
+    [
+      "ul",
+      [
+        "Campaign A: 50 leads, so Rs 2,000 per lead. Two of them become customers, so Rs 50,000 per customer.",
+        "Campaign B: 20 leads, so Rs 5,000 per lead. Eight of them become customers, so Rs 12,500 per customer."
+      ]
+    ],
+    [
+      "p",
+      "Campaign A looks cheaper if you only look at leads. Campaign B brings customers at a quarter of the cost. The better campaign is the one with the lower cost per customer, as long as the margin on each sale supports it."
+    ],
+    [
+      "h2",
+      "Why this gets missed"
+    ],
+    [
+      "p",
+      "Google Ads and Meta Ads report leads easily because the form submission happens on your website. What happens afterwards, such as a call, a quotation or a sale, usually happens by WhatsApp, phone or in person, so the ad platform never sees it."
+    ],
+    [
+      "h2",
+      "How to start tracking customers"
+    ],
+    [
+      "ol",
+      [
+        "Keep a simple list of every enquiry with its source, such as Google Ads, Meta Ads or direct.",
+        "Mark each lead as qualified, quoted or sold, and note the sale value.",
+        "Every month, divide spend by qualified leads and by customers.",
+        "Use these numbers, not clicks, to decide which campaign gets more budget."
+      ]
+    ],
+    [
+      "h2",
+      "Sending results back to Google"
+    ],
+    [
+      "p",
+      "Google describes enhanced conversions for leads as an upgraded version of offline conversion import that uses user-provided data such as email addresses. In short, when a lead later becomes a customer, you can send that result back so Google learns which clicks led to real business. It needs the Google tag or Google Tag Manager on your site and a way to import the results, so it suits businesses with enough enquiries and a tidy customer list."
+    ],
+    [
+      "p",
+      "Last verified: 6 November 2026, against the Google Ads Help page below."
+    ],
+    [
+      "src",
+      [
+        [
+          "About enhanced conversions for leads (Google Ads Help)",
+          "https://support.google.com/google-ads/answer/15713840?hl=en"
+        ]
+      ]
     ]
-   ]
-  ]
- ],
- "faq": [
-  [
-   "Is a low cost per lead a good sign?",
-   "Not by itself. It is only good if those leads turn into customers at a sensible rate."
   ],
-  [
-   "Do I need special software to track customers?",
-   "No. A shared sheet with the lead source, status and sale value is enough to start."
+  "faq": [
+    [
+      "Is a low cost per lead a good sign?",
+      "Not by itself. It is only good if those leads turn into customers at a sensible rate."
+    ],
+    [
+      "Do I need special software to track customers?",
+      "No. A shared sheet with the lead source, status and sale value is enough to start."
+    ],
+    [
+      "What if my customers order on WhatsApp?",
+      "Keep the WhatsApp enquiries in the same list and note the source when the chat starts, for example by asking how they found you."
+    ]
   ],
-  [
-   "What if my customers order on WhatsApp?",
-   "Keep the WhatsApp enquiries in the same list and note the source when the chat starts, for example by asking how they found you."
-  ]
- ],
- "related": [
-  "conversion-tracking-google-ads-meta-ads",
-  "why-google-ads-get-clicks-but-no-enquiries",
-  "lead-generation-for-service-businesses-pakistan"
- ]
+  "related": [
+    "conversion-tracking-google-ads-meta-ads",
+    "why-google-ads-get-clicks-but-no-enquiries",
+    "lead-generation-for-service-businesses-pakistan"
+  ],
+  "seo": "Cost per Lead vs Cost per Customer: What to Track"
 }

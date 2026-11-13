@@ -1,93 +1,94 @@
 {
- "slug": "how-to-choose-a-website-developer-in-pakistan",
- "title": "How to Choose a Website Developer for Your Business in Pakistan",
- "desc": "What a good small-business website needs, what to check in a developer's work, and the questions to ask before you pay for a new website.",
- "kw": "website development company in Pakistan",
- "mins": 6,
- "service": "website-development",
- "extra_service": "",
- "answer": "A good business website loads fast on a phone, explains what you offer in a few seconds, makes contacting you easy, and belongs to you. Check a developer's live work, ask who owns the domain and hosting, and make sure the site is built for search and tracking from the start.",
- "body": [
-  [
-   "h2",
-   "What your website must do"
+  "slug": "how-to-choose-a-website-developer-in-pakistan",
+  "title": "How to Choose a Website Developer for Your Business in Pakistan",
+  "desc": "What a good small-business website needs, what to check in a developer's work, and the questions to ask before you pay for a new website.",
+  "kw": "website development company in Pakistan",
+  "mins": 6,
+  "service": "website-development",
+  "extra_service": "",
+  "answer": "A good business website loads fast on a phone, explains what you offer in a few seconds, makes contacting you easy, and belongs to you. Check a developer's live work, ask who owns the domain and hosting, and make sure the site is built for search and tracking from the start.",
+  "body": [
+    [
+      "h2",
+      "What your website must do"
+    ],
+    [
+      "ul",
+      [
+        "Load quickly on mobile data, because most visitors will arrive on a phone.",
+        "Say clearly what you do, who it is for and where you work.",
+        "Make the next step obvious: call, WhatsApp, or a short form.",
+        "Look trustworthy, with real contact details and honest information.",
+        "Be easy for Google to read, with clear page titles, headings and descriptions."
+      ]
+    ],
+    [
+      "h2",
+      "Check their real work"
+    ],
+    [
+      "p",
+      "Ask to see live websites they have built, and open them on your own phone. Look at how fast they load, whether the text is easy to read, and whether you can find the contact button. Do not rely on screenshots alone."
+    ],
+    [
+      "h2",
+      "Questions to ask"
+    ],
+    [
+      "ul",
+      [
+        "Who will own the domain name and the hosting account?",
+        "Will the website be mobile-first, and how will you test it?",
+        "What happens after launch: updates, fixes and support?",
+        "Will you set up basic SEO and tracking, such as Google Analytics?",
+        "Can I edit the text myself, or do I need you for every change?",
+        "What is included in the price, and what costs extra?"
+      ]
+    ],
+    [
+      "h2",
+      "Warning signs"
+    ],
+    [
+      "ul",
+      [
+        "The developer registers the domain or hosting in their own name only.",
+        "Very slow pages, heavy images or lots of unnecessary plugins.",
+        "No plan for contact forms, WhatsApp or tracking.",
+        "Copied text or template content that does not describe your business.",
+        "A promise that the site will rank first on Google."
+      ]
+    ],
+    [
+      "h2",
+      "Plan for ads and search"
+    ],
+    [
+      "p",
+      "If you will run Google Ads or Meta Ads, the page those ads open is part of your results. A fast, focused landing page with one clear action usually performs better than a crowded home page."
+    ]
   ],
-  [
-   "ul",
-   [
-    "Load quickly on mobile data, because most visitors will arrive on a phone.",
-    "Say clearly what you do, who it is for and where you work.",
-    "Make the next step obvious: call, WhatsApp, or a short form.",
-    "Look trustworthy, with real contact details and honest information.",
-    "Be easy for Google to read, with clear page titles, headings and descriptions."
-   ]
+  "faq": [
+    [
+      "How long does it take to build a small business website?",
+      "It depends on the number of pages and how quickly you provide text and images. A simple site can take a few weeks. Ask for a clear timeline in writing."
+    ],
+    [
+      "Do I need a website if I have a Facebook page?",
+      "A Facebook page helps, but a website gives you a place you control, works well with Google search and Google Ads, and can show your services in more detail."
+    ],
+    [
+      "Should I use a template or a custom design?",
+      "A well-made template can be a sensible, affordable start. What matters is speed, clarity and how well it fits your business, not whether it is custom."
+    ]
   ],
-  [
-   "h2",
-   "Check their real work"
+  "related": [
+    "website-checklist-before-running-ads",
+    "lead-generation-for-service-businesses-pakistan",
+    "conversion-tracking-google-ads-meta-ads"
   ],
-  [
-   "p",
-   "Ask to see live websites they have built, and open them on your own phone. Look at how fast they load, whether the text is easy to read, and whether you can find the contact button. Do not rely on screenshots alone."
-  ],
-  [
-   "h2",
-   "Questions to ask"
-  ],
-  [
-   "ul",
-   [
-    "Who will own the domain name and the hosting account?",
-    "Will the website be mobile-first, and how will you test it?",
-    "What happens after launch: updates, fixes and support?",
-    "Will you set up basic SEO and tracking, such as Google Analytics?",
-    "Can I edit the text myself, or do I need you for every change?",
-    "What is included in the price, and what costs extra?"
-   ]
-  ],
-  [
-   "h2",
-   "Warning signs"
-  ],
-  [
-   "ul",
-   [
-    "The developer registers the domain or hosting in their own name only.",
-    "Very slow pages, heavy images or lots of unnecessary plugins.",
-    "No plan for contact forms, WhatsApp or tracking.",
-    "Copied text or template content that does not describe your business.",
-    "A promise that the site will rank first on Google."
-   ]
-  ],
-  [
-   "h2",
-   "Plan for ads and search"
-  ],
-  [
-   "p",
-   "If you will run Google Ads or Meta Ads, the page those ads open is part of your results. A fast, focused landing page with one clear action usually performs better than a crowded home page."
-  ]
- ],
- "faq": [
-  [
-   "How long does it take to build a small business website?",
-   "It depends on the number of pages and how quickly you provide text and images. A simple site can take a few weeks. Ask for a clear timeline in writing."
-  ],
-  [
-   "Do I need a website if I have a Facebook page?",
-   "A Facebook page helps, but a website gives you a place you control, works well with Google search and Google Ads, and can show your services in more detail."
-  ],
-  [
-   "Should I use a template or a custom design?",
-   "A well-made template can be a sensible, affordable start. What matters is speed, clarity and how well it fits your business, not whether it is custom."
-  ]
- ],
- "related": [
-  "website-checklist-before-running-ads",
-  "lead-generation-for-service-businesses-pakistan",
-  "conversion-tracking-google-ads-meta-ads"
- ],
- "date": "2026-11-02",
- "updated": "2026-11-02",
- "draft": false
+  "date": "2026-11-02",
+  "updated": "2026-11-02",
+  "draft": false,
+  "seo": "How to Choose a Website Developer in Pakistan"
 }

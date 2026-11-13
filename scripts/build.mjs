@@ -101,7 +101,7 @@ for (const p of posts) {
     { '@type': 'BlogPosting', '@id': url + '#article', headline: p.title, description: p.desc, datePublished: p.date, dateModified: mod, inLanguage: 'en', mainEntityOfPage: url, url, image: D + 'og-image.png', author: { '@id': D + '#organization' }, publisher: { '@id': D + '#organization' }, about: p.kw || p.title, isPartOf: { '@id': D + 'blog/#blog' } },
     { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: D }, { '@type': 'ListItem', position: 2, name: 'Blog', item: D + 'blog/' }, { '@type': 'ListItem', position: 3, name: p.title, item: url }] }];
   if ((p.faq || []).length) g.push({ '@type': 'FAQPage', mainEntity: p.faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) });
-  put(`blog/${p.slug}/index.html`, main, g, p.title.length < 44 ? p.title + ' | ' + BRAND : p.title, p.desc, url, true);
+  put(`blog/${p.slug}/index.html`, main, g, p.seo || (p.title.length < 44 ? p.title + ' | ' + BRAND : p.title), p.desc, url, true);
 }
 // remove pages of deleted or draft posts
 const keep = new Set(posts.map((p) => p.slug));
@@ -187,8 +187,8 @@ for (const c of areas) {
     + `<p class="eyebrow">${esc(c.full)}</p><h1 class="h1">Digital marketing for <em>businesses in ${esc(c.label)}.</em></h1><p class="lead">Google Ads, Meta Ads and mobile-friendly websites for businesses in ${esc(c.label)} that want more of the right customers.</p></div></section>`
     + `<section class="sec"><div class="wrap"><article class="post">${body}</article></div></section></main>`;
   const url = D + 'areas/' + c.slug + '/';
-  const title = `Digital Marketing for ${c.name} Businesses | Google Ads and Meta Ads`;
-  const desc = `Google Ads, Meta Ads and website development for businesses in ${c.label}. Practical, honest, online help to get more enquiries. Start with a free consultation.`;
+  const title = `Digital Marketing in ${c.name} | Google Ads & Meta Ads`;
+  const desc = `Google Ads, Meta Ads and website development for businesses in ${c.label}. Practical, honest, online help to get more enquiries. Free consultation.`;
   const g = [ORG,
     { '@type': 'WebPage', '@id': url + '#webpage', name: title, description: desc, url, inLanguage: 'en', isPartOf: { '@id': D + '#website' }, dateModified: c.date },
     { '@type': 'Service', '@id': url + '#service', name: `Digital marketing services for businesses in ${c.label}`, serviceType: 'Digital marketing, Google Ads, Meta Ads and website development', provider: { '@id': D + '#organization' }, areaServed: { '@type': 'Country', name: c.full }, url },
@@ -206,7 +206,7 @@ for (const old of ['lahore', 'karachi', 'islamabad', 'rawalpindi']) {
     + `<section class="sec"><div class="wrap"><div class="post-grid">${areas.map((c) => `<article class="card spot post-card"><span class="post-tag">${esc(list(c.places.slice(0, 3)))}</span><h2><a class="stretch" href="${c.slug}/">Digital marketing in ${c.name}</a></h2><p>Google Ads, Meta Ads and websites for businesses in ${c.label}.</p></article>`).join('')}</div>`
     + '<p style="margin-top:28px" class="lead">Is your business somewhere else? <a href="../contact/">Tell us where you are</a> and we will tell you honestly whether we can help.</p></div></section></main>';
   const url = D + 'areas/';
-  const title = 'Areas We Serve | Digital Marketing for UAE, USA and Pakistan Businesses';
+  const title = 'Areas We Serve: UAE, USA and Pakistan | Ansar Marketing';
   const desc = 'Ansar Marketing Services works online with businesses in the UAE, the United States and Pakistan: Google Ads, Meta Ads and website development.';
   const g = [ORG, { '@type': 'CollectionPage', '@id': url + '#webpage', name: title, description: desc, url, inLanguage: 'en', isPartOf: { '@id': D + '#website' }, mainEntity: { '@type': 'ItemList', itemListElement: areas.map((c, i) => ({ '@type': 'ListItem', position: i + 1, url: D + 'areas/' + c.slug + '/', name: `Digital marketing in ${c.name}` })) } },
     { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: D }, { '@type': 'ListItem', position: 2, name: 'Areas we serve', item: url }] }];
