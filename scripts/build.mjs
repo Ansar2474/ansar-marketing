@@ -9,7 +9,7 @@ const BRAND = 'Ansar Marketing Services';
 const SAME = ['https://web.facebook.com/profile.php?id=100082032374292', 'https://www.instagram.com/m.ansar971/', 'https://www.linkedin.com/in/mansarofficial'];
 const rd = (f) => fs.readFileSync(path.join(ROOT, f), 'utf8');
 const CSP = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://ansar2474.github.io https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com; font-src 'self' data:; connect-src 'self' https://script.google.com https://script.googleusercontent.com https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com https://*.g.doubleclick.net; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests";
-const SEC = `<meta http-equiv="Content-Security-Policy" content="${CSP}"><meta name="referrer" content="strict-origin-when-cross-origin"><meta name="format-detection" content="telephone=no"><script>if(top!==self){try{top.location=self.location}catch(e){document.documentElement.style.display="none"}}</script>`;
+const SEC = `<meta http-equiv="Content-Security-Policy" content="${CSP}"><meta name="referrer" content="strict-origin-when-cross-origin"><meta name="format-detection" content="telephone=no"><link rel="alternate" type="application/rss+xml" title="Ansar Marketing blog" href="/feed.xml"><script>if(top!==self){try{top.location=self.location}catch(e){document.documentElement.style.display="none"}}</script>`;
 const secure = (f, s) => (f.endsWith('.html') && !f.startsWith('admin/') && !s.includes('Content-Security-Policy')) ? s.replace(/(<meta charset=[^>]*>)/, '$1' + SEC) : s;
 const wr = (f, s0) => { const s = secure(f, s0); fs.mkdirSync(path.dirname(path.join(ROOT, f)), { recursive: true }); fs.writeFileSync(path.join(ROOT, f), s); };
 const esc = (t) => String(t ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#x27;');
@@ -225,6 +225,14 @@ for (const old of ['lahore', 'karachi', 'islamabad', 'rawalpindi']) {
   const rows = stat.map((u) => [D + u, u === 'blog/' ? latest : (u.startsWith('areas/') ? '2026-11-12' : prev[D + u])]);
   for (const p of posts) rows.push([D + 'blog/' + p.slug + '/', p.updated || p.date]);
   rows.push([D + 'privacy/', prev[D + 'privacy/']]);
+  rows.push([D + 'terms/', '2026-11-14']);
   wr('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + rows.map(([l, m]) => `  <url><loc>${l}</loc>${m ? `<lastmod>${m}</lastmod>` : ''}</url>`).join('\n') + '\n</urlset>\n');
+}
+
+// ------------------------------------------------------------------ RSS feed
+{
+  const x = (t) => String(t ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const items = posts.slice(0, 20).map((p) => `<item><title>${x(p.title)}</title><link>${D}blog/${p.slug}/</link><guid>${D}blog/${p.slug}/</guid><pubDate>${new Date(p.date + 'T09:00:00Z').toUTCString()}</pubDate><description>${x(p.desc)}</description></item>`).join('');
+  wr('feed.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel><title>Ansar Marketing Services Blog</title><link>${D}blog/</link><description>Practical Google Ads, Meta Ads and website guides for businesses in Pakistan.</description><language>en</language>${items}</channel></rss>\n`);
 }
 console.log(`Built ${posts.length} posts, projects and sitemap.`);
