@@ -220,7 +220,7 @@ for (const old of ['lahore', 'karachi', 'islamabad', 'rawalpindi']) {
 {
   const old = fs.existsSync(path.join(ROOT, 'sitemap.xml')) ? rd('sitemap.xml') : '';
   const prev = {}; for (const m of old.matchAll(/<loc>([^<]*)<\/loc>(?:<lastmod>([^<]*)<\/lastmod>)?/g)) prev[m[1]] = m[2];
-  const stat = ['', 'services/', 'services/google-ads-management/', 'services/meta-ads-management/', 'services/digital-marketing/', 'services/website-development/', 'services/conversion-tracking/', 'about/', 'our-work/', 'contact/', 'blog/', 'areas/', ...areas.map((c) => 'areas/' + c.slug + '/')];
+  const stat = ['', 'services/', 'services/google-ads-management/', 'services/meta-ads-management/', 'services/digital-marketing/', 'services/website-development/', 'services/conversion-tracking/', 'services/seo-services/', 'services/social-media-marketing/', 'services/lead-generation/', 'services/ecommerce-marketing/', 'about/', 'our-work/', 'contact/', 'blog/', 'areas/', ...areas.map((c) => 'areas/' + c.slug + '/')];
   const latest = posts.reduce((m, p) => ((p.updated || p.date) > m ? (p.updated || p.date) : m), '');
   const rows = stat.map((u) => [D + u, u === 'blog/' ? latest : (u.startsWith('areas/') ? '2026-11-12' : prev[D + u])]);
   for (const p of posts) rows.push([D + 'blog/' + p.slug + '/', p.updated || p.date]);

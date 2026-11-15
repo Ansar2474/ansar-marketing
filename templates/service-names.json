@@ -1,7 +1,11 @@
 {
  "google-ads-management": "Google Ads Management",
  "meta-ads-management": "Meta Ads Management",
- "digital-marketing": "Digital Marketing Consultancy",
+ "digital-marketing": "Digital Marketing",
  "website-development": "Website Development",
- "conversion-tracking": "Conversion Tracking Setup"
+ "conversion-tracking": "Conversion Tracking Setup",
+ "seo-services": "SEO Services",
+ "social-media-marketing": "Social Media Marketing",
+ "lead-generation": "Lead Generation",
+ "ecommerce-marketing": "E-commerce Marketing"
 }

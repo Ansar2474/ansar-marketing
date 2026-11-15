@@ -1,6 +1,6 @@
 # Ansar Marketing Services
 
-> Ansar Marketing Services is a digital growth and web development agency for businesses in Pakistan. It offers Google Ads management, Meta Ads (Facebook and Instagram) management, digital marketing consultancy and mobile-friendly website development. It works with clients online through WhatsApp, calls and email.
+> Ansar Marketing Services is a digital growth and web development agency for businesses in Pakistan. It offers Google Ads management, Meta Ads (Facebook and Instagram) management, digital marketing, SEO, social media marketing, lead generation, e-commerce marketing and mobile-friendly website development. It works with clients online through WhatsApp, calls and email.
 
 ## Services
 - [Google Ads Management](https://ansar.me/services/google-ads-management/): search campaigns, keyword research, ad copy, conversion tracking and optimisation.
@@ -8,6 +8,10 @@
 - [Digital Marketing](https://ansar.me/services/digital-marketing/): strategy, audience and competitor research, lead generation planning, reporting.
 - [Website Development](https://ansar.me/services/website-development/): fast, mobile-friendly business websites and landing pages.
 - [Conversion Tracking](https://ansar.me/services/conversion-tracking/): Google Ads, GA4 and Meta tracking so you can see which ads bring enquiries, WhatsApp clicks and calls.
+- [SEO Services](https://ansar.me/services/seo-services/): Search engine optimisation for businesses in Pakistan: keyword research, on-page SEO, local SEO and tracking, so the right customers can find you on Google.
+- [Social Media Marketing](https://ansar.me/services/social-media-marketing/): Facebook and Instagram social media marketing for businesses in Pakistan: page setup, content planning and posting that builds trust and brings messages.
+- [Lead Generation](https://ansar.me/services/lead-generation/): Lead generation for service businesses in Pakistan: landing pages, Google and Meta campaigns, forms and WhatsApp follow-up that bring enquiries from the right people.
+- [E-commerce Marketing](https://ansar.me/services/ecommerce-marketing/): E-commerce marketing for online stores in Pakistan: Google Shopping and Meta ads, product page improvements and order tracking to help you get more orders.
 
 ## Areas served
 - [All areas](https://ansar.me/areas/), including [UAE](https://ansar.me/areas/uae/), [USA](https://ansar.me/areas/usa/) and [Pakistan](https://ansar.me/areas/pakistan/)
