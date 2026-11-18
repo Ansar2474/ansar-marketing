@@ -234,6 +234,8 @@ for (const old of ['lahore', 'karachi', 'islamabad', 'rawalpindi']) {
   rows.push([D + 'industries/online-stores/', '2026-11-16']);
   rows.push([D + 'industries/home-and-local-services/', '2026-11-16']);
   rows.push([D + 'tools/ad-budget-calculator/', '2026-11-16']);
+  rows.push([D + 'how-it-works/', '2026-11-19']);
+  rows.push([D + 'free-marketing-audit/', '2026-11-19']);
   wr('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + rows.map(([l, m]) => `  <url><loc>${l}</loc>${m ? `<lastmod>${m}</lastmod>` : ''}</url>`).join('\n') + '\n</urlset>\n');
 }
 
