@@ -75,18 +75,71 @@ const card = (p) => `<article class="card spot post-card"><span class="post-tag"
     'Practical guides on Google Ads, Meta Ads, conversion tracking, websites and lead generation for business owners in Pakistan.', D + 'blog/', false);
 }
 
+
+// ------------------------------------------------------------------ inline links in posts
+// Text in post JSON can use [link text](/path/) markup. On top of that, the first mention of
+// a known phrase in each post is linked automatically (one link per target, max 7 per post).
+const AUTO = [
+  ['free marketing audit', '/free-marketing-audit/'],
+  ['ad budget calculator', '/tools/ad-budget-calculator/'],
+  ['Google Ads vs Meta Ads', '/blog/google-ads-vs-meta-ads-pakistan/'],
+  ['cost per lead vs cost per customer', '/blog/cost-per-lead-vs-cost-per-customer/'],
+  ['Google Ads AI Max', '/blog/what-is-google-ads-ai-max/'],
+  ['AI Max', '/blog/what-is-google-ads-ai-max/'],
+  ['Google Ads management', '/services/google-ads-management/'],
+  ['Meta Ads management', '/services/meta-ads-management/'],
+  ['conversion tracking', '/services/conversion-tracking/'],
+  ['lead generation', '/services/lead-generation/'],
+  ['social media marketing', '/services/social-media-marketing/'],
+  ['e-commerce marketing', '/services/ecommerce-marketing/'],
+  ['ecommerce marketing', '/services/ecommerce-marketing/'],
+  ['website development', '/services/website-development/'],
+  ['digital marketing', '/services/digital-marketing/'],
+  ['search engine optimisation', '/services/seo-services/'],
+  ['search engine optimization', '/services/seo-services/'],
+  ['SEO', '/services/seo-services/'],
+  ['Meta Ads', '/services/meta-ads-management/'],
+  ['Facebook Ads', '/services/meta-ads-management/'],
+  ['Google Ads', '/services/google-ads-management/'],
+  ['how we work', '/how-it-works/'],
+].sort((a, b) => b[0].length - a[0].length);
+const rel2 = (u) => '../..' + u; // posts live two folders deep
+const linkOpen = (u) => `<a href="${rel2(u)}">`;
+function makeRich(selfUrl) {
+  const used = new Set([selfUrl]);
+  let count = 0;
+  return (raw, auto = true) => {
+    let s = esc(raw);
+    // manual markup: [text](/path/)
+    s = s.replace(/\[([^\]]+)\]\((\/[a-z0-9\/#?=&;-]*)\)/gi, (m, tx, u) => { used.add(u.split('#')[0]); count++; return linkOpen(u) + tx + '</a>'; });
+    if (!auto) return s;
+    const parts = s.split(/(<a [^>]*>.*?<\/a>)/g);
+    for (let i = 0; i < parts.length; i += 2) {
+      for (const [ph, u] of AUTO) {
+        if (count >= 7) break;
+        if (used.has(u)) continue;
+        const re = new RegExp('(^|[^A-Za-z0-9-])(' + ph.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')(?![A-Za-z0-9-])', 'i');
+        if (re.test(parts[i])) { parts[i] = parts[i].replace(re, (m, a, b) => a + linkOpen(u) + b + '</a>'); used.add(u); count++; }
+      }
+    }
+    return parts.join('');
+  };
+}
+const plain = (t) => String(t ?? '').replace(/\[([^\]]+)\]\(\/[^)]*\)/g, '$1');
+
 // ------------------------------------------------------------------ blog posts
 const byTitle = Object.fromEntries(posts.map((p) => [p.slug, p.title]));
 for (const p of posts) {
+  const rich = makeRich('/blog/' + p.slug + '/');
   let body = '';
   for (const [kind, val] of p.body) {
     if (kind === 'h2') body += `<h2>${esc(val)}</h2>`;
-    else if (kind === 'p') body += `<p>${esc(val)}</p>`;
-    else if (kind === 'ol') body += '<ol>' + val.map((x) => `<li>${esc(x)}</li>`).join('') + '</ol>';
+    else if (kind === 'p') body += `<p>${rich(val)}</p>`;
+    else if (kind === 'ol') body += '<ol>' + val.map((x) => `<li>${rich(x)}</li>`).join('') + '</ol>';
     else if (kind === 'src') body += '<h2>Sources</h2><ul class="src">' + val.map(([t, u]) => `<li><a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(t)}<span class="vh"> (opens in a new tab)</span></a></li>`).join('') + '</ul>';
-    else body += '<ul>' + val.map((x) => `<li>${esc(x)}</li>`).join('') + '</ul>';
+    else body += '<ul>' + val.map((x) => `<li>${rich(x)}</li>`).join('') + '</ul>';
   }
-  const faq = (p.faq || []).map(([q, a]) => `<div><h3>${esc(q)}</h3><p>${esc(a)}</p></div>`).join('');
+  const faq = (p.faq || []).map(([q, a]) => `<div><h3>${esc(q)}</h3><p>${rich(a, false)}</p></div>`).join('');
   const sv = [p.service, ...(p.extra_service ? [p.extra_service] : [])].filter((s) => SERV[s]);
   const svl = sv.map((s) => `<a href="../../services/${s}/">${SERV[s]}</a>`).join('');
   const rel = (p.related || []).filter((r) => byTitle[r]).map((r) => `<a href="../${r}/">${esc(byTitle[r])}</a>`).join('');
@@ -94,7 +147,7 @@ for (const p of posts) {
     + `<nav class="crumb" aria-label="Breadcrumb"><a href="../../">Home</a><span>/</span><a href="../">Blog</a><span>/</span><span aria-current="page">${esc(p.kw || p.title)}</span></nav>`
     + `<p class="eyebrow">${p.mins} min read</p><h1 class="h1">${esc(p.title)}</h1><p class="lead">${esc(p.desc)}</p>`
     + `<p class="post-meta">By ${BRAND} · Published ${fmtDate(p.date)}</p></div></section>`
-    + `<section class="sec"><div class="wrap"><article class="post"><div class="answer-box"><b>Short answer</b><p>${esc(p.answer)}</p></div>${body}`
+    + `<section class="sec"><div class="wrap"><article class="post"><div class="answer-box"><b>Short answer</b><p>${rich(p.answer, false)}</p></div>${body}`
     + (faq ? `<h2>Quick answers</h2><div class="qa">${faq}</div>` : '')
     + `<div class="post-cta"><h2>Want help with this?</h2><p>Tell us about your business and goals. We will suggest a sensible starting point, with no promises of guaranteed results.</p><div class="related">${svl}<a href="../../contact/">Get a free consultation</a></div></div>`
     + (rel ? `<h2>Keep reading</h2><div class="related">${rel}</div>` : '') + '</article></div></section></main>';
@@ -103,7 +156,7 @@ for (const p of posts) {
   const g = [ORG,
     { '@type': 'BlogPosting', '@id': url + '#article', headline: p.title, description: p.desc, datePublished: p.date, dateModified: mod, inLanguage: 'en', mainEntityOfPage: url, url, image: D + 'og-image.png', author: { '@id': D + '#organization' }, publisher: { '@id': D + '#organization' }, about: p.kw || p.title, isPartOf: { '@id': D + 'blog/#blog' } },
     { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: D }, { '@type': 'ListItem', position: 2, name: 'Blog', item: D + 'blog/' }, { '@type': 'ListItem', position: 3, name: p.title, item: url }] }];
-  if ((p.faq || []).length) g.push({ '@type': 'FAQPage', mainEntity: p.faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) });
+  if ((p.faq || []).length) g.push({ '@type': 'FAQPage', mainEntity: p.faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: plain(a) } })) });
   put(`blog/${p.slug}/index.html`, main, g, p.seo || (p.title.length < 44 ? p.title + ' | ' + BRAND : p.title), p.desc, url, true);
 }
 // remove pages of deleted or draft posts
