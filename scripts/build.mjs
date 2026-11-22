@@ -61,18 +61,23 @@ function put(file, main, graph, title, desc, url, depth2) {
   wr(file, head + main + foot);
 }
 
+
+// ------------------------------------------------------------------ post photos (Unsplash)
+const photo = (id, w, h) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&crop=entropy&q=72&w=${w}&h=${h}`;
+const photoImg = (p, sizes, w, h, extra) => `<img src="${photo(p.image, w, h)}" srcset="${[Math.round(w / 2), w, Math.round(w * 1.5)].map((x) => photo(p.image, x, Math.round(x * h / w)) + ' ' + x + 'w').join(', ')}" sizes="${sizes}" width="${w}" height="${h}" alt="${esc(p.imageAlt || p.title)}" ${extra} decoding="async" referrerpolicy="no-referrer">`;
+
 // ------------------------------------------------------------------ blog index
-const card = (p) => `<article class="card spot post-card"><span class="post-tag">${p.mins} min read · ${fmtDate(p.date)}</span><h2><a class="stretch" href="${p.slug}/">${esc(p.title)}</a></h2><p>${esc(p.desc)}</p></article>`;
+const card = (p) => `<article class="card spot post-card">${p.image ? `<span class="post-thumb">${photoImg(p, "(min-width:1024px) 360px, (min-width:640px) 45vw, 92vw", 640, 360, 'loading="lazy"')}</span>` : ''}<span class="post-tag">${p.mins} min read · ${fmtDate(p.date)}</span><h2><a class="stretch" href="${p.slug}/">${esc(p.title)}</a></h2><p>${esc(p.desc)}</p></article>`;
 {
   const main = '<main id="main" tabindex="-1" class="is-in"><section class="page-hero"><div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="../">Home</a><span>/</span><span aria-current="page">Blog</span></nav>'
-    + '<p class="eyebrow">Blog</p><h1 class="h1">Practical guides on <em>Google Ads, Meta Ads and growth.</em></h1>'
+    + '<p class="eyebrow">Blog</p><h1 class="h1">Practical guides on <em>digital marketing and growth.</em></h1>'
     + '<p class="lead">Plain-language answers for business owners in Pakistan. No hype, no guaranteed results.</p></div></section>'
     + `<section class="sec"><div class="wrap"><div class="post-grid">${posts.map(card).join('')}</div></div></section></main>`;
   const g = [ORG, { '@type': 'Blog', '@id': D + 'blog/#blog', name: BRAND + ' Blog', url: D + 'blog/', publisher: { '@id': D + '#organization' }, inLanguage: 'en',
     blogPost: posts.map((p) => ({ '@type': 'BlogPosting', headline: p.title, url: D + 'blog/' + p.slug + '/', datePublished: p.date })) },
     { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: D }, { '@type': 'ListItem', position: 2, name: 'Blog', item: D + 'blog/' }] }];
-  put('blog/index.html', main, g, 'Blog | Google Ads, Meta Ads and Digital Marketing in Pakistan',
-    'Practical guides on Google Ads, Meta Ads, conversion tracking, websites and lead generation for business owners in Pakistan.', D + 'blog/', false);
+  put('blog/index.html', main, g, 'Blog | Digital Marketing, SEO and Ads Guides for Pakistan',
+    'Practical guides on digital marketing, SEO, social media, ads, websites and lead generation for business owners in Pakistan.', D + 'blog/', false);
 }
 
 
@@ -147,14 +152,14 @@ for (const p of posts) {
     + `<nav class="crumb" aria-label="Breadcrumb"><a href="../../">Home</a><span>/</span><a href="../">Blog</a><span>/</span><span aria-current="page">${esc(p.kw || p.title)}</span></nav>`
     + `<p class="eyebrow">${p.mins} min read</p><h1 class="h1">${esc(p.title)}</h1><p class="lead">${esc(p.desc)}</p>`
     + `<p class="post-meta">By ${BRAND} · Published ${fmtDate(p.date)}</p></div></section>`
-    + `<section class="sec"><div class="wrap"><article class="post"><div class="answer-box"><b>Short answer</b><p>${rich(p.answer, false)}</p></div>${body}`
+    + `<section class="sec"><div class="wrap"><article class="post">${p.image ? `<figure class="post-hero-img">${photoImg(p, "(min-width:900px) 760px, 92vw", 1200, 675, 'loading="eager" fetchpriority="high"')}</figure>` : ''}<div class="answer-box"><b>Short answer</b><p>${rich(p.answer, false)}</p></div>${body}`
     + (faq ? `<h2>Quick answers</h2><div class="qa">${faq}</div>` : '')
     + `<div class="post-cta"><h2>Want help with this?</h2><p>Tell us about your business and goals. We will suggest a sensible starting point, with no promises of guaranteed results.</p><div class="related">${svl}<a href="../../contact/">Get a free consultation</a></div></div>`
     + (rel ? `<h2>Keep reading</h2><div class="related">${rel}</div>` : '') + '</article></div></section></main>';
   const url = D + 'blog/' + p.slug + '/';
   const mod = p.updated || p.date;
   const g = [ORG,
-    { '@type': 'BlogPosting', '@id': url + '#article', headline: p.title, description: p.desc, datePublished: p.date, dateModified: mod, inLanguage: 'en', mainEntityOfPage: url, url, image: D + 'og-image.png', author: { '@id': D + '#organization' }, publisher: { '@id': D + '#organization' }, about: p.kw || p.title, isPartOf: { '@id': D + 'blog/#blog' } },
+    { '@type': 'BlogPosting', '@id': url + '#article', headline: p.title, description: p.desc, datePublished: p.date, dateModified: mod, inLanguage: 'en', mainEntityOfPage: url, url, image: p.image ? photo(p.image, 1200, 675) : D + 'og-image.png', author: { '@id': D + '#organization' }, publisher: { '@id': D + '#organization' }, about: p.kw || p.title, isPartOf: { '@id': D + 'blog/#blog' } },
     { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: D }, { '@type': 'ListItem', position: 2, name: 'Blog', item: D + 'blog/' }, { '@type': 'ListItem', position: 3, name: p.title, item: url }] }];
   if ((p.faq || []).length) g.push({ '@type': 'FAQPage', mainEntity: p.faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: plain(a) } })) });
   put(`blog/${p.slug}/index.html`, main, g, p.seo || (p.title.length < 44 ? p.title + ' | ' + BRAND : p.title), p.desc, url, true);
@@ -240,14 +245,14 @@ for (const c of areas) {
     + `<h2>Also serving</h2><div class="related">${others.map((o) => `<a href="../${o.slug}/">Digital marketing in ${o.name}</a>`).join('')}<a href="../../blog/how-to-choose-a-google-ads-expert-in-pakistan/">How to choose a Google Ads expert</a></div>`;
   const main = '<main id="main" tabindex="-1" class="is-in"><section class="page-hero"><div class="wrap">'
     + `<nav class="crumb" aria-label="Breadcrumb"><a href="../../">Home</a><span>/</span><a href="../">Areas we serve</a><span>/</span><span aria-current="page">${c.name}</span></nav>`
-    + `<p class="eyebrow">${esc(c.full)}</p><h1 class="h1">Digital marketing for <em>businesses in ${esc(c.label)}.</em></h1><p class="lead">Google Ads, Meta Ads and mobile-friendly websites for businesses in ${esc(c.label)} that want more of the right customers.</p></div></section>`
+    + `<p class="eyebrow">${esc(c.full)}</p><h1 class="h1">Digital marketing for <em>businesses in ${esc(c.label)}.</em></h1><p class="lead">Digital marketing, SEO, ads and mobile-friendly websites for businesses in ${esc(c.label)} that want more of the right customers.</p></div></section>`
     + `<section class="sec"><div class="wrap"><article class="post">${body}</article></div></section></main>`;
   const url = D + 'areas/' + c.slug + '/';
   const title = `Digital Marketing in ${c.name} | Google Ads & Meta Ads`;
-  const desc = `Google Ads, Meta Ads and website development for businesses in ${c.label}. Practical, honest, online help to get more enquiries. Free consultation.`;
+  const desc = `Digital marketing, ads and website development for businesses in ${c.label}. Practical, honest, online help to get more enquiries. Free consultation.`;
   const g = [ORG,
     { '@type': 'WebPage', '@id': url + '#webpage', name: title, description: desc, url, inLanguage: 'en', isPartOf: { '@id': D + '#website' }, dateModified: c.date },
-    { '@type': 'Service', '@id': url + '#service', name: `Digital marketing services for businesses in ${c.label}`, serviceType: 'Digital marketing, Google Ads, Meta Ads and website development', provider: { '@id': D + '#organization' }, areaServed: { '@type': 'Country', name: c.full }, url },
+    { '@type': 'Service', '@id': url + '#service', name: `Digital marketing services for businesses in ${c.label}`, serviceType: 'Digital marketing, SEO, ads, social media, lead generation and website development', provider: { '@id': D + '#organization' }, areaServed: { '@type': 'Country', name: c.full }, url },
     { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: D }, { '@type': 'ListItem', position: 2, name: 'Areas we serve', item: D + 'areas/' }, { '@type': 'ListItem', position: 3, name: c.name, item: url }] },
     { '@type': 'FAQPage', mainEntity: faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) }];
   put(`areas/${c.slug}/index.html`, main, g, title, desc, url, true);
@@ -259,11 +264,11 @@ for (const old of ['lahore', 'karachi', 'islamabad', 'rawalpindi']) {
 {
   const main = '<main id="main" tabindex="-1" class="is-in"><section class="page-hero"><div class="wrap"><nav class="crumb" aria-label="Breadcrumb"><a href="../">Home</a><span>/</span><span aria-current="page">Areas we serve</span></nav>'
     + '<p class="eyebrow">Areas we serve</p><h1 class="h1">Digital marketing for <em>businesses in the UAE, the US and Pakistan.</em></h1><p class="lead">Ansar Marketing Services is based in Pakistan and works online with businesses in these three markets, through WhatsApp, calls, video meetings and email.</p></div></section>'
-    + `<section class="sec"><div class="wrap"><div class="post-grid">${areas.map((c) => `<article class="card spot post-card"><span class="post-tag">${esc(list(c.places.slice(0, 3)))}</span><h2><a class="stretch" href="${c.slug}/">Digital marketing in ${c.name}</a></h2><p>Google Ads, Meta Ads and websites for businesses in ${c.label}.</p></article>`).join('')}</div>`
+    + `<section class="sec"><div class="wrap"><div class="post-grid">${areas.map((c) => `<article class="card spot post-card"><span class="post-tag">${esc(list(c.places.slice(0, 3)))}</span><h2><a class="stretch" href="${c.slug}/">Digital marketing in ${c.name}</a></h2><p>Digital marketing, SEO, ads and websites for businesses in ${c.label}.</p></article>`).join('')}</div>`
     + '<p style="margin-top:28px" class="lead">Is your business somewhere else? <a href="../contact/">Tell us where you are</a> and we will tell you honestly whether we can help.</p></div></section></main>';
   const url = D + 'areas/';
   const title = 'Areas We Serve: UAE, USA and Pakistan | Ansar Marketing';
-  const desc = 'Ansar Marketing Services works online with businesses in the UAE, the United States and Pakistan: Google Ads, Meta Ads and website development.';
+  const desc = 'Ansar Marketing Services works online with businesses in the UAE, the United States and Pakistan: digital marketing, SEO, ads, social media and website development.';
   const g = [ORG, { '@type': 'CollectionPage', '@id': url + '#webpage', name: title, description: desc, url, inLanguage: 'en', isPartOf: { '@id': D + '#website' }, mainEntity: { '@type': 'ItemList', itemListElement: areas.map((c, i) => ({ '@type': 'ListItem', position: i + 1, url: D + 'areas/' + c.slug + '/', name: `Digital marketing in ${c.name}` })) } },
     { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: D }, { '@type': 'ListItem', position: 2, name: 'Areas we serve', item: url }] }];
   put('areas/index.html', main, g, title, desc, url, false);
@@ -296,6 +301,6 @@ for (const old of ['lahore', 'karachi', 'islamabad', 'rawalpindi']) {
 {
   const x = (t) => String(t ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   const items = posts.slice(0, 20).map((p) => `<item><title>${x(p.title)}</title><link>${D}blog/${p.slug}/</link><guid>${D}blog/${p.slug}/</guid><pubDate>${new Date(p.date + 'T09:00:00Z').toUTCString()}</pubDate><description>${x(p.desc)}</description></item>`).join('');
-  wr('feed.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel><title>Ansar Marketing Services Blog</title><link>${D}blog/</link><description>Practical Google Ads, Meta Ads and website guides for businesses in Pakistan.</description><language>en</language>${items}</channel></rss>\n`);
+  wr('feed.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel><title>Ansar Marketing Services Blog</title><link>${D}blog/</link><description>Practical guides on digital marketing, SEO, ads and websites for businesses in Pakistan.</description><language>en</language>${items}</channel></rss>\n`);
 }
 console.log(`Built ${posts.length} posts, projects and sitemap.`);
