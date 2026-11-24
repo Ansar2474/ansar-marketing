@@ -91,6 +91,7 @@ const AUTO = [
   ['cost per lead vs cost per customer', '/blog/cost-per-lead-vs-cost-per-customer/'],
   ['Google Ads AI Max', '/blog/what-is-google-ads-ai-max/'],
   ['AI Max', '/blog/what-is-google-ads-ai-max/'],
+  ['Google Business Profile', '/blog/google-business-profile-setup-pakistan/'],
   ['Google Ads management', '/services/google-ads-management/'],
   ['Meta Ads management', '/services/meta-ads-management/'],
   ['conversion tracking', '/services/conversion-tracking/'],
