@@ -92,6 +92,7 @@ const AUTO = [
   ['Google Ads AI Max', '/blog/what-is-google-ads-ai-max/'],
   ['AI Max', '/blog/what-is-google-ads-ai-max/'],
   ['Google Business Profile', '/blog/google-business-profile-setup-pakistan/'],
+  ['WhatsApp Business app', '/blog/whatsapp-business-setup-pakistan-small-business/'],
   ['Google Ads management', '/services/google-ads-management/'],
   ['Meta Ads management', '/services/meta-ads-management/'],
   ['conversion tracking', '/services/conversion-tracking/'],
