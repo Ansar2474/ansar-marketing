@@ -1,0 +1,117 @@
+/* wow.css: shared motion and depth layer for every page. Safe without JS; respects reduced motion. */
+
+/* ---------- soft depth behind sections ---------- */
+.sec{position:relative;isolation:isolate}
+.sec>.wrap{position:relative;z-index:1}
+.sec:not(.sec-navy){overflow:clip}
+.sec:not(.sec-navy)::before{content:"";position:absolute;inset:-12%;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(560px 340px at 92% 10%,rgba(10,116,144,.16),transparent 70%),
+    radial-gradient(520px 340px at 6% 92%,rgba(91,78,232,.13),transparent 70%),
+    radial-gradient(380px 260px at 52% 48%,rgba(255,217,120,.07),transparent 70%);
+  animation:wowmesh 15s ease-in-out infinite alternate}
+@keyframes wowmesh{to{transform:translate3d(-2.5%,3%,0) scale(1.06)}}
+.sec-tint::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background-image:radial-gradient(rgba(23,53,127,.13) 1px,transparent 1.3px);background-size:24px 24px;
+  -webkit-mask-image:linear-gradient(180deg,transparent,#000 22%,#000 78%,transparent);mask-image:linear-gradient(180deg,transparent,#000 22%,#000 78%,transparent)}
+
+/* navy sections: drifting aurora and a fine grid */
+.sec-navy::before{width:min(70vw,720px);height:min(70vw,720px);right:-14%;top:-30%;background:radial-gradient(circle,rgba(34,211,238,.26),transparent 62%);animation:wowdrift 16s ease-in-out infinite alternate}
+.sec-navy::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(520px 360px at 6% 100%,rgba(108,151,232,.28),transparent 70%);animation:wowdrift2 20s ease-in-out infinite alternate}
+.sec-navy>.wrap{position:relative;z-index:1}
+@keyframes wowdrift{to{transform:translate3d(-60px,50px,0) scale(1.12)}}
+@keyframes wowdrift2{to{transform:translate3d(40px,-30px,0) scale(1.1);opacity:.7}}
+
+/* ---------- headings ---------- */
+.h2 em,.display em{background-size:220% 100%;animation:wowflow 7s ease-in-out infinite alternate}
+@keyframes wowflow{from{background-position:0% 50%}to{background-position:100% 50%}}
+.eyebrow{position:relative}
+.sec-head .eyebrow::after,.sec>.wrap>.eyebrow::after{content:"";display:inline-block;vertical-align:middle;width:0;height:2px;margin-left:.8em;border-radius:2px;background:linear-gradient(90deg,var(--cyan),transparent);transition:width .9s .25s cubic-bezier(.2,.8,.2,1)}
+html:not(.wow-on) .sec-head .eyebrow::after{width:2.6em}
+.sec-head.wow-in .eyebrow::after,.wow-in>.eyebrow::after,.wow-in .eyebrow::after{width:2.6em}
+
+/* ---------- scroll reveals (JS adds html.wow-on) ---------- */
+html.wow-on [data-wow]{opacity:0;translate:0 30px;filter:blur(7px);
+  transition:opacity .8s cubic-bezier(.2,.8,.2,1) var(--wd,0s),translate .9s cubic-bezier(.2,.8,.2,1) var(--wd,0s),filter .8s ease var(--wd,0s)}
+html.wow-on [data-wow].wow-in{opacity:1;translate:0 0;filter:blur(0)}
+html.wow-on [data-wow="left"]{translate:-34px 0}
+html.wow-on [data-wow="right"]{translate:34px 0}
+html.wow-on [data-wow="zoom"]{translate:0 18px;scale:.94}
+html.wow-on [data-wow="zoom"].wow-in{scale:1}
+
+/* ---------- cards ---------- */
+.card{transition:box-shadow .35s,border-color .35s}
+.card.spot:hover{box-shadow:0 26px 54px -26px rgba(23,53,127,.45),0 0 0 1px rgba(23,53,127,.12)}
+.svc .art{position:relative}
+.svc .art img{transition:transform 1.1s cubic-bezier(.2,.8,.2,1),filter .5s}
+.svc:hover .art img{transform:scale(1.07)}
+.svc .art::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.38) 50%,transparent 65%);transform:translateX(-120%);transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.svc:hover .art::after{transform:translateX(120%)}
+.svc .link svg{transition:transform .3s}
+.svc:hover .link svg{transform:translateX(5px)}
+
+/* ---------- hero: living network, aurora, depth ---------- */
+.hero-net{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0;animation:wowfade 1.6s .2s forwards}
+@keyframes wowfade{to{opacity:1}}
+.hero-aurora{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.hero-aurora i{position:absolute;border-radius:50%;will-change:transform}
+.hero-aurora i:nth-child(1){width:62vmax;height:62vmax;left:-18vmax;top:-28vmax;background:radial-gradient(circle,rgba(56,213,242,.20),transparent 62%);animation:wowa1 18s ease-in-out infinite alternate}
+.hero-aurora i:nth-child(2){width:54vmax;height:54vmax;right:-20vmax;top:-12vmax;background:radial-gradient(circle,rgba(125,110,255,.28),transparent 62%);animation:wowa2 22s ease-in-out infinite alternate}
+.hero-aurora i:nth-child(3){width:46vmax;height:46vmax;left:30%;bottom:-30vmax;background:radial-gradient(circle,rgba(255,217,120,.12),transparent 62%);animation:wowa3 26s ease-in-out infinite alternate}
+@keyframes wowa1{to{transform:translate3d(10vmax,8vmax,0) scale(1.15)}}
+@keyframes wowa2{to{transform:translate3d(-12vmax,10vmax,0) scale(1.1)}}
+@keyframes wowa3{to{transform:translate3d(-14vmax,-6vmax,0) scale(1.2)}}
+
+/* dashboard follows the pointer in 3D, layers move at different depths */
+.stage-wrap{perspective:1200px}
+.gf{transform-style:preserve-3d;transform:rotateY(calc(var(--tx,0)*10deg)) rotateX(calc(var(--ty,0)*-8deg));transition:transform .18s ease-out}
+.gf-card{translate:calc(var(--tx,0)*-10px) calc(var(--ty,0)*-8px);transform:translateZ(30px)}
+.gf-chip.c1{translate:calc(var(--tx,0)*26px) calc(var(--ty,0)*20px)}
+.gf-chip.c2{translate:calc(var(--tx,0)*-30px) calc(var(--ty,0)*22px)}
+.gf-chip.c3{translate:calc(var(--tx,0)*22px) calc(var(--ty,0)*-24px)}
+.gf-toast{translate:calc(var(--tx,0)*-28px) calc(var(--ty,0)*-18px)}
+.gf-glow{translate:calc(var(--tx,0)*18px) calc(var(--ty,0)*14px)}
+.gf-card{overflow:hidden}
+.gf-card::after{content:"";position:absolute;inset:-40% -60%;pointer-events:none;background:linear-gradient(105deg,transparent 42%,rgba(255,255,255,.16) 50%,transparent 58%);transform:translateX(-60%);animation:wowsheen 6.5s 1.2s ease-in-out infinite}
+@keyframes wowsheen{0%,55%{transform:translateX(-60%)}100%{transform:translateX(60%)}}
+
+/* floating chat bubble (visual concept) */
+.gf-bub{position:absolute;left:-3%;top:50%;display:flex;align-items:center;gap:calc(var(--u)*9);max-width:52%;padding:calc(var(--u)*10) calc(var(--u)*15) calc(var(--u)*10) calc(var(--u)*10);border-radius:calc(var(--u)*18) calc(var(--u)*18) calc(var(--u)*18) calc(var(--u)*4);background:rgba(255,255,255,.96);color:#0A1A4A;box-shadow:0 22px 40px -18px rgba(0,8,50,.8);font:600 max(9px,calc(var(--u)*12))/1.25 var(--font-body);animation:wowbob 7s ease-in-out infinite alternate;translate:calc(var(--tx,0)*30px) calc(var(--ty,0)*-12px);transform:translateZ(60px)}
+.gf-bub .wa{flex:none;width:calc(var(--u)*24);height:calc(var(--u)*24);border-radius:50%;background:#25D366;display:grid;place-items:center}
+.gf-bub .wa svg{width:62%;height:62%;fill:#fff}
+.gf-bub .t{position:relative;display:block;min-width:calc(var(--u)*130)}
+.gf-bub .dots{position:absolute;left:0;top:50%;translate:0 -50%;display:flex;gap:calc(var(--u)*4);animation:wowdots 8s infinite}
+.gf-bub .dots i{width:calc(var(--u)*6);height:calc(var(--u)*6);border-radius:50%;background:#8AA0D6;animation:wowdot 1s infinite}
+.gf-bub .dots i:nth-child(2){animation-delay:.15s}.gf-bub .dots i:nth-child(3){animation-delay:.3s}
+.gf-bub .msg{display:block;animation:wowmsg 8s infinite}
+@keyframes wowdot{50%{transform:translateY(calc(var(--u)*-4));opacity:.5}}
+@keyframes wowdots{0%,2%{opacity:0}6%,26%{opacity:1}30%,100%{opacity:0}}
+@keyframes wowmsg{0%,28%{opacity:0;translate:0 6px}36%,92%{opacity:1;translate:0 0}100%{opacity:0}}
+@keyframes wowbob{from{transform:translateZ(60px) translateY(calc(var(--u)*-7))}to{transform:translateZ(60px) translateY(calc(var(--u)*7))}}
+
+/* phones and touch: no pointer, so the scene sways gently instead */
+@media (hover:none){
+  .gf{animation:wowsway 10s ease-in-out infinite alternate}
+  @keyframes wowsway{from{transform:rotateY(-5deg) rotateX(3deg)}to{transform:rotateY(5deg) rotateX(-3deg)}}
+}
+
+/* buttons: a quiet glow pulse on the main call to action */
+.btn-hero{animation:wowpulse 3.4s 2s ease-in-out infinite}
+@keyframes wowpulse{0%,100%{box-shadow:0 14px 32px -14px rgba(0,8,50,.75),0 0 0 0 rgba(255,217,120,.0)}50%{box-shadow:0 14px 32px -14px rgba(0,8,50,.75),0 0 0 9px rgba(255,217,120,.18)}}
+.mag{transition:translate .25s cubic-bezier(.2,.8,.2,1)}
+
+/* page heroes on inner pages get the same living background */
+.page-hero{position:relative;overflow:hidden}
+.page-hero>.wrap{position:relative;z-index:1}
+
+@media (max-width:700px){
+  .hero-aurora i{animation-duration:30s}
+  .sec-navy::before{animation:none}
+  .sec-tint::after{background-size:20px 20px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  html.wow-on [data-wow]{opacity:1;translate:none;filter:none;scale:none}
+  .gf{transform:none}
+}
