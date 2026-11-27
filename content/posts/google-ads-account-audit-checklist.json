@@ -1,12 +1,12 @@
 {
  "slug": "google-ads-account-audit-checklist",
  "date": "2026-11-06",
- "updated": "2026-11-22",
+ "updated": "2026-11-27",
  "draft": false,
  "title": "Google Ads Account Audit: A 10-Point Checklist for Small Businesses",
  "desc": "A practical checklist to review your own Google Ads account: tracking, search terms, ads, landing pages, location settings and budget.",
  "kw": "Google Ads audit checklist",
- "mins": 6,
+ "mins": 8,
  "service": "google-ads-management",
  "extra_service": "website-development",
  "answer": "A Google Ads audit checks ten things: conversion tracking, goals, search terms, negative keywords, ad text, landing pages, location and language settings, schedule, budget and reporting. You can review most of them yourself in an hour, and a clear list of fixes matters more than a long report.",
@@ -28,6 +28,40 @@
     "Language and schedule: do ads run in the language and at the hours that suit your customers and how fast you can reply?",
     "Budget: is the daily budget enough to get meaningful data, and is it split sensibly across campaigns?",
     "Reporting: can you see spend, enquiries and cost per enquiry in one place every month?"
+   ]
+  ],
+  [
+   "h2",
+   "How to check each point in about an hour"
+  ],
+  [
+   "p",
+   "Menu names inside Google Ads change from time to time, so look for the closest match if yours differs."
+  ],
+  [
+   "ul",
+   [
+    "Tracking: open Goals, then Conversions. Each action should have a clear name and a status that shows it is recording. If it says no recent conversions, send a test enquiry and check again.",
+    "Search terms: in the campaign menu, look for Insights and reports, then Search terms. Set the date range to the last 30 days and read the list, not just the totals.",
+    "Negative keywords: add words that signal the wrong customer, such as jobs, salary, free, course or PDF. Add the names of cities you do not serve.",
+    "Locations and language: open the campaign settings. Check that the areas match where you work, and that people who are only interested in a place are not treated the same as people physically there.",
+    "Networks: in a Search campaign, look at whether Search partners and the Display Network are switched on. Decide on purpose, so budget is not spent where you do not want it."
+   ]
+  ],
+  [
+   "h2",
+   "A simple way to score your account"
+  ],
+  [
+   "p",
+   "Give each of the ten points one of three marks: fine, needs a fix, or I do not know. Every \"I do not know\" counts as a problem, because you cannot manage what you cannot see."
+  ],
+  [
+   "ul",
+   [
+    "Mostly fine: keep a monthly check and test one change at a time.",
+    "A few fixes: start with tracking, then wasted searches, then ad text and landing page.",
+    "Many unknowns: you may not have the access or the numbers you need. Fix that first."
    ]
   ],
   [
@@ -75,6 +109,14 @@
   [
    "Can an audit promise better results?",
    "No. It shows what is wasting money or hiding results, so you can fix it."
+  ],
+  [
+   "What is a search terms report?",
+   "It lists the actual searches people typed before seeing or clicking your ad. It is the quickest way to find searches that waste money."
+  ],
+  [
+   "What if my conversion tracking is not working?",
+   "Fix it before anything else. Without correct tracking you cannot tell which campaigns bring enquiries, so any other change is a guess."
   ]
  ],
  "related": [

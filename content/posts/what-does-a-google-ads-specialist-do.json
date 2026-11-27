@@ -3,7 +3,7 @@
  "title": "What Does a Google Ads Specialist Actually Do?",
  "desc": "A Google Ads specialist plans, builds and improves your search campaigns. See what the work includes and what to ask before you hire one.",
  "kw": "Google Ads specialist",
- "mins": 5,
+ "mins": 6,
  "service": "google-ads-management",
  "answer": "A Google Ads specialist plans and manages your paid search campaigns. The work includes keyword research, writing ads, setting up conversion tracking, controlling the budget, and reviewing results regularly so campaigns improve over time. A good specialist explains each step and reports on enquiries, not only clicks.",
  "body": [
@@ -30,6 +30,61 @@
   [
    "p",
    "A specialist cannot fix an unclear offer or a slow, confusing website. Ads bring visitors; your page and your follow-up turn them into customers. That is why we also look at the landing page."
+  ],
+  [
+   "h2",
+   "What you should see in a monthly report"
+  ],
+  [
+   "p",
+   "Reports can be short, but they should answer the questions a business owner actually has. Ask for these basics every month:"
+  ],
+  [
+   "ul",
+   [
+    "Spend: how much of your budget was used, and on which campaigns.",
+    "Enquiries: how many calls, forms and WhatsApp messages came from ads, counted separately from plain clicks.",
+    "Cost per enquiry: spend divided by enquiries, so you can compare it with what a customer is worth to you.",
+    "Search terms: a short note on which searches brought useful enquiries and which were blocked.",
+    "Changes made: what was changed this month, and why.",
+    "Next steps: what will be tested next month."
+   ]
+  ],
+  [
+   "h2",
+   "What the first 30 days usually look like"
+  ],
+  [
+   "p",
+   "Every business is different, so treat this as a typical pattern, not a promise."
+  ],
+  [
+   "ol",
+   [
+    "Week 1: access to your accounts, a talk about your services, areas and best customers, and a check that tracking works.",
+    "Week 2: campaigns, keywords and ads are built and the landing page is checked on a phone.",
+    "Weeks 3 and 4: ads start collecting data. The specialist reads the search terms, blocks searches that do not fit, and fixes obvious problems."
+   ]
+  ],
+  [
+   "p",
+   "Real learning takes longer than a month. Be wary of anyone who says they will know exactly what works after a few days."
+  ],
+  [
+   "h2",
+   "Who pays whom"
+  ],
+  [
+   "p",
+   "You pay Google for the clicks, called ad spend, from your own Google Ads account. You pay the specialist or agency a separate fee for the work. Ask for both numbers in writing, so you know what you are paying for."
+  ],
+  [
+   "h2",
+   "Certificates and badges"
+  ],
+  [
+   "p",
+   "Google offers certifications and a Partner programme. They show that someone has studied and met certain requirements. They do not prove the person will understand your customers, so also ask how they would measure results for your business and ask to see how they report."
   ],
   [
    "h2",
@@ -70,6 +125,14 @@
   [
    "Do I own my Google Ads account?",
    "You should. Ask for the account to be created under your own business details."
+  ],
+  [
+   "How long before I see results from Google Ads?",
+   "You can see clicks and data in the first days. Learning what brings good enquiries takes weeks. No honest specialist can promise a date or a number of leads."
+  ],
+  [
+   "Do I pay the specialist or Google for the ads?",
+   "Both, separately. The ad spend goes to Google from your own account. The management fee goes to the specialist or agency."
   ]
  ],
  "related": [
@@ -80,7 +143,7 @@
  "extra_service": null,
  "date": "2026-10-26",
  "draft": false,
- "updated": "2026-11-22",
+ "updated": "2026-11-27",
  "image": "1599658880436-c61792e70672",
  "imageAlt": "Google Analytics overview report open on a laptop"
 }
