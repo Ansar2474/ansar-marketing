@@ -115,3 +115,16 @@ html.wow-on [data-wow="zoom"].wow-in{scale:1}
   html.wow-on [data-wow]{opacity:1;translate:none;filter:none;scale:none}
   .gf{transform:none}
 }
+
+/* industry banners: full image (no bad crop), real text and channel icons on top */
+.ph-wrap{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--line-strong,#d5def0);background:#06123b;isolation:isolate}
+.ph-wrap .ph-banner{width:100%;aspect-ratio:16/9!important;object-fit:cover;border:0!important;border-radius:0!important;display:block;height:auto}
+.ph-wrap .ph-ov{position:absolute;inset:auto 0 0 0;z-index:2;display:flex;align-items:flex-end;justify-content:space-between;gap:16px;padding:clamp(40px,9vw,120px) clamp(14px,3vw,36px) clamp(12px,2.6vw,30px);background:linear-gradient(0deg,rgba(4,12,40,.94) 0%,rgba(4,12,40,.72) 45%,rgba(4,12,40,0) 100%);color:#fff}
+.ph-txt{display:grid;gap:4px;max-width:46em}
+.ph-tag{font:600 clamp(10px,1.4vw,12px)/1 var(--font-body,system-ui);letter-spacing:.12em;text-transform:uppercase;color:#7df0ff}
+.ph-txt strong{font:700 clamp(18px,3.4vw,34px)/1.12 var(--font-display,var(--font-body,system-ui));letter-spacing:-.01em}
+.ph-line{font:400 clamp(12px,1.6vw,16px)/1.45 var(--font-body,system-ui);color:rgba(255,255,255,.86)}
+.ph-icons{display:flex;gap:8px;flex:none}
+.ph-ic{width:clamp(28px,4vw,40px);height:clamp(28px,4vw,40px);border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 6px 16px -6px rgba(0,0,0,.6)}
+.ph-ic svg{width:56%;height:56%;fill:var(--c)}
+@media (max-width:640px){.ph-line{display:none}.ph-wrap .ph-ov{align-items:center}.ph-icons{gap:6px}}

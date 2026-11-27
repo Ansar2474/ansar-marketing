@@ -290,12 +290,12 @@ for (const old of ['lahore', 'karachi', 'islamabad', 'rawalpindi']) {
   rows.push([D + 'privacy/', prev[D + 'privacy/']]);
   rows.push([D + 'terms/', '2026-11-14']);
   rows.push([D + 'industries/', '2026-11-26']);
-  rows.push([D + 'industries/clinics-and-healthcare/', '2026-11-25']);
-  rows.push([D + 'industries/real-estate/', '2026-11-25']);
-  rows.push([D + 'industries/schools-and-academies/', '2026-11-25']);
-  rows.push([D + 'industries/restaurants-and-cafes/', '2026-11-25']);
-  rows.push([D + 'industries/online-stores/', '2026-11-25']);
-  rows.push([D + 'industries/home-and-local-services/', '2026-11-26']);
+  rows.push([D + 'industries/clinics-and-healthcare/', '2026-11-27']);
+  rows.push([D + 'industries/real-estate/', '2026-11-27']);
+  rows.push([D + 'industries/schools-and-academies/', '2026-11-27']);
+  rows.push([D + 'industries/restaurants-and-cafes/', '2026-11-27']);
+  rows.push([D + 'industries/online-stores/', '2026-11-27']);
+  rows.push([D + 'industries/home-and-local-services/', '2026-11-27']);
   rows.push([D + 'tools/ad-budget-calculator/', '2026-11-16']);
   rows.push([D + 'how-it-works/', '2026-11-19']);
   rows.push([D + 'free-marketing-audit/', '2026-11-19']);
